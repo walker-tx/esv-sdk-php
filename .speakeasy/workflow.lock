@@ -6,7 +6,7 @@ sources:
         sourceBlobDigest: sha256:40c6ad832e98a0f34e24aea90700c770ad62a0bb5f9313bd51f1183e6c11a45f
         tags:
             - latest
-            - speakeasy-sdk-regen-1738816267
+            - speakeasy-sdk-regen-1738816716
 targets:
     esv:
         source: Esv-OAS
@@ -14,7 +14,7 @@ targets:
         sourceRevisionDigest: sha256:6d682808db46836b6b8f15c1c3d1efe281babab94fae33d5668d772e61cfb489
         sourceBlobDigest: sha256:40c6ad832e98a0f34e24aea90700c770ad62a0bb5f9313bd51f1183e6c11a45f
         codeSamplesNamespace: esv-oas-php-code-samples
-        codeSamplesRevisionDigest: sha256:d310832cf7fc331731a996e1ffd67c1b83c4bf96283dad3dd891e4a775a37535
+        codeSamplesRevisionDigest: sha256:bff75e7da50b00216d2c36a1ab73fcc9b8e7cf2e70c8fbc86ed91e681f8974e2
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
