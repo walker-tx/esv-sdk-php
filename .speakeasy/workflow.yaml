@@ -14,3 +14,9 @@ targets:
             packagist:
                 username: $packagist_username
                 token: $packagist_token
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/walker/esv/esv-oas-php-code-samples
+            labelOverride:
+                fixedValue: Php (SDK)
+            blocking: false
