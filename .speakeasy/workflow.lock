@@ -6,12 +6,15 @@ sources:
         sourceBlobDigest: sha256:40c6ad832e98a0f34e24aea90700c770ad62a0bb5f9313bd51f1183e6c11a45f
         tags:
             - latest
+            - speakeasy-sdk-regen-1738816267
 targets:
     esv:
         source: Esv-OAS
         sourceNamespace: esv-org-api
         sourceRevisionDigest: sha256:6d682808db46836b6b8f15c1c3d1efe281babab94fae33d5668d772e61cfb489
         sourceBlobDigest: sha256:40c6ad832e98a0f34e24aea90700c770ad62a0bb5f9313bd51f1183e6c11a45f
+        codeSamplesNamespace: esv-oas-php-code-samples
+        codeSamplesRevisionDigest: sha256:d310832cf7fc331731a996e1ffd67c1b83c4bf96283dad3dd891e4a775a37535
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -25,3 +28,9 @@ workflow:
         esv:
             target: php
             source: Esv-OAS
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/walker/esv/esv-oas-php-code-samples
+                labelOverride:
+                    fixedValue: Php (SDK)
+                blocking: false
