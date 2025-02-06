@@ -5,8 +5,8 @@ management:
   docVersion: 1.0.0
   speakeasyVersion: 1.484.1
   generationVersion: 2.503.2
-  releaseVersion: 0.0.4
-  configChecksum: 590829494b6b8a39828a50ca2bc91367
+  releaseVersion: 0.0.5
+  configChecksum: 0ad0f121ed6fbf1c5fae4d510684c6ea
   repoURL: https://github.com/walker-tx/esv-sdk-php.git
   installationURL: https://github.com/walker-tx/esv-sdk-php
   published: true
@@ -26,6 +26,7 @@ generatedFiles:
   - .gitattributes
   - USAGE.md
   - composer.json
+  - config/services.php
   - docs/Models/Components/PassageMeta.md
   - docs/Models/Components/PassageResponse.md
   - docs/Models/Components/Security.md
@@ -84,6 +85,7 @@ generatedFiles:
   - src/Models/Operations/SearchPassagesResponse.php
   - src/Models/Operations/SearchPassagesResponseBody.php
   - src/Models/Operations/Verses.php
+  - src/PackageServiceProvider.php
   - src/Passages.php
   - src/SDKConfiguration.php
   - src/Utils/BigDecimalHandler.php
