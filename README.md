@@ -48,7 +48,7 @@ The SDK relies on [Composer](https://getcomposer.org/) to manage its dependencie
 
 To install the SDK and add it as a dependency to an existing `composer.json` file:
 ```bash
-composer require "walker-tx/esv"
+composer require "walker-tx/esv-sdk-php"
 ```
 <!-- End SDK Installation [installation] -->
 

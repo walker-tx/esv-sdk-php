@@ -28,7 +28,7 @@ class SDKConfiguration
 
     public string $genVersion = '2.503.2';
 
-    public string $userAgent = 'speakeasy-sdk/php 0.0.2 2.503.2 1.0.0 walker-tx/esv';
+    public string $userAgent = 'speakeasy-sdk/php 0.0.2 2.503.2 1.0.0 walker-tx/esv-sdk-php';
 
     public ?RetryConfig $retryConfig = null;
 

@@ -12,8 +12,6 @@ targets:
         sourceNamespace: esv-org-api
         sourceRevisionDigest: sha256:6d682808db46836b6b8f15c1c3d1efe281babab94fae33d5668d772e61cfb489
         sourceBlobDigest: sha256:40c6ad832e98a0f34e24aea90700c770ad62a0bb5f9313bd51f1183e6c11a45f
-        codeSamplesNamespace: esv-oas-php-code-samples
-        codeSamplesRevisionDigest: sha256:fa0c4db4feaf9de88fd9d2705ad98273dd46ce16cef40cfe68dabe0bf7d4cb3f
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -27,13 +25,3 @@ workflow:
         esv:
             target: php
             source: Esv-OAS
-            publish:
-                packagist:
-                    username: $packagist_username
-                    token: $packagist_token
-            codeSamples:
-                registry:
-                    location: registry.speakeasyapi.dev/walker/esv/esv-oas-php-code-samples
-                labelOverride:
-                    fixedValue: Php (SDK)
-                blocking: false

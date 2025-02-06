@@ -1,5 +1,5 @@
 {
-  "name": "walker-tx/esv",
+  "name": "walker-tx/esv-sdk-php",
   "type": "library",
   "autoload": {
     "psr-4": {

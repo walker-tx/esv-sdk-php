@@ -38,4 +38,4 @@ php:
   methodArguments: infer-optional-args
   namespace: WalkerTx\Esv
   outputModelSuffix: output
-  packageName: walker-tx/esv
+  packageName: walker-tx/esv-sdk-php
