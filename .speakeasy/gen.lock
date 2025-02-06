@@ -5,8 +5,11 @@ management:
   docVersion: 1.0.0
   speakeasyVersion: 1.484.1
   generationVersion: 2.503.2
-  releaseVersion: 0.0.1
-  configChecksum: 387dd54ec8aad98ba766159823acb914
+  releaseVersion: 0.0.2
+  configChecksum: baab816557a8b366cd8bc6621df17618
+  repoURL: https://github.com/walker-tx/esv-sdk-php.git
+  installationURL: https://github.com/walker-tx/esv-sdk-php
+  published: true
 features:
   php:
     constsAndDefaults: 0.2.0
