@@ -6,12 +6,12 @@
 
 declare(strict_types=1);
 
-namespace Esv;
+namespace WalkerTx\Esv;
 
-use Esv\Hooks\HookContext;
-use Esv\Models\Operations;
-use Esv\Utils\Options;
 use Speakeasy\Serializer\DeserializationContext;
+use WalkerTx\Esv\Hooks\HookContext;
+use WalkerTx\Esv\Models\Operations;
+use WalkerTx\Esv\Utils\Options;
 
 class Passages
 {
@@ -52,7 +52,7 @@ class Passages
      *
      * @param  string  $query
      * @return Operations\GetPassageAudioResponse
-     * @throws \Esv\Models\Errors\APIException
+     * @throws \WalkerTx\Esv\Models\Errors\APIException
      * @see https://api.esv.org/docs/passage-audio/
      */
     public function getAudio(string $query, ?Options $options = null): Operations\GetPassageAudioResponse
@@ -99,7 +99,7 @@ class Passages
                     rawResponse: $httpResponse,
                     bytes: $obj);
             } else {
-                throw new \Esv\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+                throw new \WalkerTx\Esv\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['400', '401'])) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
@@ -107,17 +107,17 @@ class Passages
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\Esv\Models\Errors\Error', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $obj = $serializer->deserialize($responseData, '\WalkerTx\Esv\Models\Errors\Error', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
                 throw $obj->toException();
             } else {
-                throw new \Esv\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+                throw new \WalkerTx\Esv\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['4XX'])) {
-            throw new \Esv\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            throw new \WalkerTx\Esv\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['5XX'])) {
-            throw new \Esv\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            throw new \WalkerTx\Esv\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         } else {
-            throw new \Esv\Models\Errors\APIException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            throw new \WalkerTx\Esv\Models\Errors\APIException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         }
     }
 
@@ -129,7 +129,7 @@ class Passages
      *
      * @param  Operations\GetPassageHtmlRequest  $request
      * @return Operations\GetPassageHtmlResponse
-     * @throws \Esv\Models\Errors\APIException
+     * @throws \WalkerTx\Esv\Models\Errors\APIException
      * @see https://api.esv.org/docs/passage-html/
      */
     public function getHtml(Operations\GetPassageHtmlRequest $request, ?Options $options = null): Operations\GetPassageHtmlResponse
@@ -167,7 +167,7 @@ class Passages
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\Esv\Models\Components\PassageResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $obj = $serializer->deserialize($responseData, '\WalkerTx\Esv\Models\Components\PassageResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
                 $response = new Operations\GetPassageHtmlResponse(
                     statusCode: $statusCode,
                     contentType: $contentType,
@@ -176,7 +176,7 @@ class Passages
 
                 return $response;
             } else {
-                throw new \Esv\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+                throw new \WalkerTx\Esv\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['400', '401'])) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
@@ -184,17 +184,17 @@ class Passages
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\Esv\Models\Errors\Error', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $obj = $serializer->deserialize($responseData, '\WalkerTx\Esv\Models\Errors\Error', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
                 throw $obj->toException();
             } else {
-                throw new \Esv\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+                throw new \WalkerTx\Esv\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['4XX'])) {
-            throw new \Esv\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            throw new \WalkerTx\Esv\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['5XX'])) {
-            throw new \Esv\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            throw new \WalkerTx\Esv\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         } else {
-            throw new \Esv\Models\Errors\APIException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            throw new \WalkerTx\Esv\Models\Errors\APIException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         }
     }
 
@@ -206,7 +206,7 @@ class Passages
      *
      * @param  Operations\GetPassageTextRequest  $request
      * @return Operations\GetPassageTextResponse
-     * @throws \Esv\Models\Errors\APIException
+     * @throws \WalkerTx\Esv\Models\Errors\APIException
      * @see https://api.esv.org/docs/passage-text/
      */
     public function getText(Operations\GetPassageTextRequest $request, ?Options $options = null): Operations\GetPassageTextResponse
@@ -244,7 +244,7 @@ class Passages
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\Esv\Models\Components\PassageResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $obj = $serializer->deserialize($responseData, '\WalkerTx\Esv\Models\Components\PassageResponse', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
                 $response = new Operations\GetPassageTextResponse(
                     statusCode: $statusCode,
                     contentType: $contentType,
@@ -253,7 +253,7 @@ class Passages
 
                 return $response;
             } else {
-                throw new \Esv\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+                throw new \WalkerTx\Esv\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['400', '401'])) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
@@ -261,17 +261,17 @@ class Passages
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\Esv\Models\Errors\Error', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $obj = $serializer->deserialize($responseData, '\WalkerTx\Esv\Models\Errors\Error', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
                 throw $obj->toException();
             } else {
-                throw new \Esv\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+                throw new \WalkerTx\Esv\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['4XX'])) {
-            throw new \Esv\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            throw new \WalkerTx\Esv\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['5XX'])) {
-            throw new \Esv\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            throw new \WalkerTx\Esv\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         } else {
-            throw new \Esv\Models\Errors\APIException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            throw new \WalkerTx\Esv\Models\Errors\APIException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         }
     }
 
@@ -285,7 +285,7 @@ class Passages
      * @param  ?int  $pageSize
      * @param  ?int  $page
      * @return Operations\SearchPassagesResponse
-     * @throws \Esv\Models\Errors\APIException
+     * @throws \WalkerTx\Esv\Models\Errors\APIException
      * @see https://api.esv.org/docs/passage-search/
      */
     private function searchIndividual(string $query, ?int $pageSize = null, ?int $page = null, ?Options $options = null): Operations\SearchPassagesResponse
@@ -328,7 +328,7 @@ class Passages
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\Esv\Models\Operations\SearchPassagesResponseBody', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $obj = $serializer->deserialize($responseData, '\WalkerTx\Esv\Models\Operations\SearchPassagesResponseBody', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
                 $response = new Operations\SearchPassagesResponse(
                     statusCode: $statusCode,
                     contentType: $contentType,
@@ -358,7 +358,7 @@ class Passages
 
                 return $response;
             } else {
-                throw new \Esv\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+                throw new \WalkerTx\Esv\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['400', '401'])) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
@@ -366,17 +366,17 @@ class Passages
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\Esv\Models\Errors\Error', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $obj = $serializer->deserialize($responseData, '\WalkerTx\Esv\Models\Errors\Error', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
                 throw $obj->toException();
             } else {
-                throw new \Esv\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+                throw new \WalkerTx\Esv\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['4XX'])) {
-            throw new \Esv\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            throw new \WalkerTx\Esv\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['5XX'])) {
-            throw new \Esv\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            throw new \WalkerTx\Esv\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         } else {
-            throw new \Esv\Models\Errors\APIException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            throw new \WalkerTx\Esv\Models\Errors\APIException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         }
     }
     /**
@@ -389,7 +389,7 @@ class Passages
      * @param  ?int  $pageSize
      * @param  ?int  $page
      * @return \Generator<Operations\SearchPassagesResponse>
-     * @throws \Esv\Models\Errors\APIException
+     * @throws \WalkerTx\Esv\Models\Errors\APIException
      * @see https://api.esv.org/docs/passage-search/
      */
     public function search(string $query, ?int $pageSize = null, ?int $page = null, ?Options $options = null): \Generator

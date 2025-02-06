@@ -6,8 +6,8 @@
 
 declare(strict_types=1);
 
-namespace Esv;
-use Esv\Utils\Retry\RetryConfig;
+namespace WalkerTx\Esv;
+use WalkerTx\Esv\Utils\Retry\RetryConfig;
 
 class SDKConfiguration
 {

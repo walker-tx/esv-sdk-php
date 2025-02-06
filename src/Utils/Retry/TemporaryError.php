@@ -6,7 +6,7 @@
 
 declare(strict_types=1);
 
-namespace Esv\Utils\Retry;
+namespace WalkerTx\Esv\Utils\Retry;
 use Psr\Http\Message\ResponseInterface;
 
 class TemporaryError extends \Exception

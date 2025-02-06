@@ -6,7 +6,7 @@
 
 declare(strict_types=1);
 
-namespace Esv\Utils\Retry;
+namespace WalkerTx\Esv\Utils\Retry;
 
 use Brick\DateTime\DateTimeException;
 use Brick\DateTime\LocalDateTime;

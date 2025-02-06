@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 require 'vendor/autoload.php';
 
-use Esv;
+use WalkerTx\Esv;
 
 $sdk = Esv\Esv::builder()
     ->setSecurity(

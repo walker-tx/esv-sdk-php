@@ -6,7 +6,7 @@
 
 declare(strict_types=1);
 
-namespace Esv\Utils;
+namespace WalkerTx\Esv\Utils;
 
 use Psr\Http\Message\MessageInterface;
 use Psr\Http\Message\RequestInterface;

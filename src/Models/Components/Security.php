@@ -6,9 +6,9 @@
 
 declare(strict_types=1);
 
-namespace Esv\Models\Components;
+namespace WalkerTx\Esv\Models\Components;
 
-use Esv\Utils\SpeakeasyMetadata;
+use WalkerTx\Esv\Utils\SpeakeasyMetadata;
 class Security
 {
     /**

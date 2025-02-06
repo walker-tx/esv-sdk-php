@@ -6,7 +6,7 @@
 
 declare(strict_types=1);
 
-namespace Esv\Models\Components;
+namespace WalkerTx\Esv\Models\Components;
 
 
 class PassageMeta

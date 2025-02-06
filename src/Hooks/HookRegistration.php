@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Esv\Hooks;
+namespace WalkerTx\Esv\Hooks;
 
 /*
  * This file is only ever generated once on the first generation and then is free to be modified.
@@ -18,7 +18,6 @@ class HookRegistration
      */
     public static function initHooks(Hooks $hooks): void
     {
-        print_r("\n\nINIT_HOOKS\n\n");
         $customPrefixApiKeyHook = new CustomPrefixApiKey();
         $hooks->registerBeforeRequestHook($customPrefixApiKeyHook);
     }

@@ -6,7 +6,7 @@
 
 declare(strict_types=1);
 
-namespace Esv\Models\Operations;
+namespace WalkerTx\Esv\Models\Operations;
 
 
 class GetPassageAudioResponse

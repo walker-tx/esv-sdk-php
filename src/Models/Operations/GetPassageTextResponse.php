@@ -6,9 +6,9 @@
 
 declare(strict_types=1);
 
-namespace Esv\Models\Operations;
+namespace WalkerTx\Esv\Models\Operations;
 
-use Esv\Models\Components;
+use WalkerTx\Esv\Models\Components;
 class GetPassageTextResponse
 {
     /**

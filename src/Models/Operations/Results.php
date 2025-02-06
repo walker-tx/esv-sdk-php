@@ -6,7 +6,7 @@
 
 declare(strict_types=1);
 
-namespace Esv\Models\Operations;
+namespace WalkerTx\Esv\Models\Operations;
 
 
 class Results
@@ -35,7 +35,7 @@ class Results
      * @var ?array<Verses> $verses
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('verses')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Esv\Models\Operations\Verses>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\WalkerTx\Esv\Models\Operations\Verses>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $verses = null;
 

@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Esv\Utils\Retry;
+namespace WalkerTx\Esv\Utils\Retry;
 
 class RetryConfigNone extends RetryConfig
 {

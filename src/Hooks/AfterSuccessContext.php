@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Esv\Hooks;
+namespace WalkerTx\Esv\Hooks;
 
 class AfterSuccessContext extends HookContext
 {

@@ -6,9 +6,9 @@
 
 declare(strict_types=1);
 
-namespace Esv\Models\Operations;
+namespace WalkerTx\Esv\Models\Operations;
 
-use Esv\Utils\SpeakeasyMetadata;
+use WalkerTx\Esv\Utils\SpeakeasyMetadata;
 class SearchPassagesRequest
 {
     /**

@@ -10,7 +10,3 @@ targets:
     esv:
         target: php
         source: Esv-OAS
-        publish:
-            packagist:
-                username: $packagist_username
-                token: $packagist_token

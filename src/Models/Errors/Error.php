@@ -6,9 +6,9 @@
 
 declare(strict_types=1);
 
-namespace Esv\Models\Errors;
+namespace WalkerTx\Esv\Models\Errors;
 
-use Esv\Utils;
+use WalkerTx\Esv\Utils;
 class Error
 {
     /**

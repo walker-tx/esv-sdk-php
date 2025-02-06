@@ -6,7 +6,7 @@
 
 declare(strict_types=1);
 
-namespace Esv\Models\Operations;
+namespace WalkerTx\Esv\Models\Operations;
 
 
 /** SearchPassagesResponseBody - Successful response */
@@ -45,7 +45,7 @@ class SearchPassagesResponseBody
      * @var ?array<Results> $results
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('results')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Esv\Models\Operations\Results>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\WalkerTx\Esv\Models\Operations\Results>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $results = null;
 

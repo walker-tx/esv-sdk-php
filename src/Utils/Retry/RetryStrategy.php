@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Esv\Utils\Retry;
+namespace WalkerTx\Esv\Utils\Retry;
 
 enum RetryStrategy: string
 {

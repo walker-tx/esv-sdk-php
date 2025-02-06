@@ -6,9 +6,9 @@
 
 declare(strict_types=1);
 
-namespace Esv\Utils;
+namespace WalkerTx\Esv\Utils;
 
-use Esv\Utils\Retry\RetryConfig;
+use WalkerTx\Esv\Utils\Retry\RetryConfig;
 
 class Options
 {

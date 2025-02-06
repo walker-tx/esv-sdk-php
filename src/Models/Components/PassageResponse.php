@@ -6,7 +6,7 @@
 
 declare(strict_types=1);
 
-namespace Esv\Models\Components;
+namespace WalkerTx\Esv\Models\Components;
 
 
 class PassageResponse
@@ -45,7 +45,7 @@ class PassageResponse
      * @var ?array<PassageMeta> $passageMeta
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('passage_meta')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Esv\Models\Components\PassageMeta>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\WalkerTx\Esv\Models\Components\PassageMeta>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $passageMeta = null;
 

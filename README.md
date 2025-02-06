@@ -83,8 +83,8 @@ declare(strict_types=1);
 
 require 'vendor/autoload.php';
 
-use Esv;
-use Esv\Models\Operations;
+use WalkerTx\Esv;
+use WalkerTx\Esv\Models\Operations;
 
 $sdk = Esv\Esv::builder()
     ->setSecurity(
@@ -123,7 +123,7 @@ declare(strict_types=1);
 
 require 'vendor/autoload.php';
 
-use Esv;
+use WalkerTx\Esv;
 
 $sdk = Esv\Esv::builder()
     ->setSecurity(
@@ -172,7 +172,7 @@ declare(strict_types=1);
 
 require 'vendor/autoload.php';
 
-use Esv;
+use WalkerTx\Esv;
 
 $sdk = Esv\Esv::builder()
     ->setSecurity(
@@ -226,7 +226,7 @@ declare(strict_types=1);
 
 require 'vendor/autoload.php';
 
-use Esv;
+use WalkerTx\Esv;
 
 $sdk = Esv\Esv::builder()
     ->setSecurity(
@@ -263,7 +263,7 @@ declare(strict_types=1);
 
 require 'vendor/autoload.php';
 
-use Esv;
+use WalkerTx\Esv;
 
 $sdk = Esv\Esv::builder()
     ->setServerURL('https://api.esv.org/v3/')

@@ -6,9 +6,9 @@
 
 declare(strict_types=1);
 
-namespace Esv;
+namespace WalkerTx\Esv;
 
-use Esv\Utils\Retry;
+use WalkerTx\Esv\Utils\Retry;
 
 /**
  * EsvBuilder is used to configure and build an instance of the SDK.

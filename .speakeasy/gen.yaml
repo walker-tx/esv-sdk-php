@@ -36,6 +36,6 @@ php:
     svcName: openapi
   maxMethodParams: 4
   methodArguments: infer-optional-args
-  namespace: Esv
+  namespace: WalkerTx\Esv
   outputModelSuffix: output
   packageName: walker-tx/esv
