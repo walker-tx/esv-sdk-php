@@ -10,3 +10,9 @@ targets:
     esv:
         target: php
         source: Esv-OAS
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/walker/esv/esv-oas-php-code-samples
+            labelOverride:
+                fixedValue: Php (SDK)
+            blocking: false
