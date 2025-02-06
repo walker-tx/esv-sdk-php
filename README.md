@@ -1,4 +1,7 @@
-# walker-tx/esv
+# Esv.org PHP SDK
+
+> [!IMPORTANT]  
+> This is not an official SDK developed by Esv.org.
 
 Developer-friendly & type-safe Php SDK specifically catered to leverage *walker-tx/esv* API.
 
@@ -24,7 +27,7 @@ For more information about the API: [ESV API Website](https://api.esv.org/)
 <!-- Start Table of Contents [toc] -->
 ## Table of Contents
 <!-- $toc-max-depth=2 -->
-* [walker-tx/esv](#walker-txesv)
+* [Esv.org PHP SDK](#esvorg-php-sdk)
   * [SDK Installation](#sdk-installation)
   * [SDK Example Usage](#sdk-example-usage)
   * [Authentication](#authentication)
