@@ -103,6 +103,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use WalkerTx\Esv;
+use WalkerTx\Esv\Models\Operations;
 
 $sdk = Esv\Esv::builder()
     ->setSecurity(
@@ -110,13 +111,15 @@ $sdk = Esv\Esv::builder()
     )
     ->build();
 
-
-
-$response = $sdk->passages->getAudio(
-    query: '<value>'
+$request = new Operations\GetPassageHtmlRequest(
+    query: '<value>',
 );
 
-if ($response->bytes !== null) {
+$response = $sdk->passages->getHtml(
+    request: $request
+);
+
+if ($response->passageResponse !== null) {
     // handle response
 }
 ```
@@ -131,10 +134,10 @@ if ($response->bytes !== null) {
 
 ### [passages](docs/sdks/passages/README.md)
 
-* [getAudio](docs/sdks/passages/README.md#getaudio) - Get Bible passage audio
 * [getHtml](docs/sdks/passages/README.md#gethtml) - Get Bible passage HTML
-* [getText](docs/sdks/passages/README.md#gettext) - Get Bible passage text
 * [search](docs/sdks/passages/README.md#search) - Search Bible passages
+* [getAudio](docs/sdks/passages/README.md#getaudio) - Get Bible passage audio
+* [getText](docs/sdks/passages/README.md#gettext) - Get Bible passage text
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
@@ -191,7 +194,7 @@ By default an API error will raise a `Errors\APIException` exception, which has 
 | `$rawResponse` | *?\Psr\Http\Message\ResponseInterface*  | The raw HTTP response |
 | `$body`        | *string*                                | The response content  |
 
-When custom error responses are specified for an operation, the SDK may also throw their associated exception. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `getAudio` method throws the following exceptions:
+When custom error responses are specified for an operation, the SDK may also throw their associated exception. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `getHtml` method throws the following exceptions:
 
 | Error Type          | Status Code | Content Type     |
 | ------------------- | ----------- | ---------------- |
@@ -206,6 +209,8 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use WalkerTx\Esv;
+use WalkerTx\Esv\Models\Errors;
+use WalkerTx\Esv\Models\Operations;
 
 $sdk = Esv\Esv::builder()
     ->setSecurity(
@@ -214,11 +219,15 @@ $sdk = Esv\Esv::builder()
     ->build();
 
 try {
-    $response = $sdk->passages->getAudio(
-        query: '<value>'
+    $request = new Operations\GetPassageHtmlRequest(
+        query: '<value>',
     );
 
-    if ($response->bytes !== null) {
+    $response = $sdk->passages->getHtml(
+        request: $request
+    );
+
+    if ($response->passageResponse !== null) {
         // handle response
     }
 } catch (Errors\ErrorThrowable $e) {
@@ -236,13 +245,14 @@ try {
 
 ### Override Server URL Per-Client
 
-The default server can also be overridden globally using the `setServerUrl(string $serverUrl)` builder method when initializing the SDK client instance. For example:
+The default server can be overridden globally using the `setServerUrl(string $serverUrl)` builder method when initializing the SDK client instance. For example:
 ```php
 declare(strict_types=1);
 
 require 'vendor/autoload.php';
 
 use WalkerTx\Esv;
+use WalkerTx\Esv\Models\Operations;
 
 $sdk = Esv\Esv::builder()
     ->setServerURL('https://api.esv.org/v3/')
@@ -251,13 +261,15 @@ $sdk = Esv\Esv::builder()
     )
     ->build();
 
-
-
-$response = $sdk->passages->getAudio(
-    query: '<value>'
+$request = new Operations\GetPassageHtmlRequest(
+    query: '<value>',
 );
 
-if ($response->bytes !== null) {
+$response = $sdk->passages->getHtml(
+    request: $request
+);
+
+if ($response->passageResponse !== null) {
     // handle response
 }
 ```

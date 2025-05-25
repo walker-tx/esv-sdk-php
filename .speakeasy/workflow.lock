@@ -1,17 +1,20 @@
-speakeasyVersion: 1.484.1
+speakeasyVersion: 1.551.0
 sources:
     Esv-OAS:
         sourceNamespace: esv-org-api
-        sourceRevisionDigest: sha256:6d682808db46836b6b8f15c1c3d1efe281babab94fae33d5668d772e61cfb489
-        sourceBlobDigest: sha256:40c6ad832e98a0f34e24aea90700c770ad62a0bb5f9313bd51f1183e6c11a45f
+        sourceRevisionDigest: sha256:a5b1d984364712190c312966dead83c8b3a4ffdfca840c76ac0eea7017d83e89
+        sourceBlobDigest: sha256:aa45a5cd72f8b25ef3d411e18de9bdf59ec407dc833b577731a8a09e6722977c
         tags:
             - latest
+            - speakeasy-sdk-regen-1748179701
 targets:
     esv:
         source: Esv-OAS
         sourceNamespace: esv-org-api
-        sourceRevisionDigest: sha256:6d682808db46836b6b8f15c1c3d1efe281babab94fae33d5668d772e61cfb489
-        sourceBlobDigest: sha256:40c6ad832e98a0f34e24aea90700c770ad62a0bb5f9313bd51f1183e6c11a45f
+        sourceRevisionDigest: sha256:a5b1d984364712190c312966dead83c8b3a4ffdfca840c76ac0eea7017d83e89
+        sourceBlobDigest: sha256:aa45a5cd72f8b25ef3d411e18de9bdf59ec407dc833b577731a8a09e6722977c
+        codeSamplesNamespace: esv-oas-php-code-samples
+        codeSamplesRevisionDigest: sha256:5d02a7900fe31aa3fe9b380f50bde91a384cac16c0cfd08ca7b8ef7ef91e5588
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -29,3 +32,9 @@ workflow:
                 packagist:
                     username: $packagist_username
                     token: $packagist_token
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/walker/esv/esv-oas-php-code-samples
+                labelOverride:
+                    fixedValue: Php (SDK)
+                blocking: false

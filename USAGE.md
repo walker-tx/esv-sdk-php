@@ -5,6 +5,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use WalkerTx\Esv;
+use WalkerTx\Esv\Models\Operations;
 
 $sdk = Esv\Esv::builder()
     ->setSecurity(
@@ -12,13 +13,15 @@ $sdk = Esv\Esv::builder()
     )
     ->build();
 
-
-
-$response = $sdk->passages->getAudio(
-    query: '<value>'
+$request = new Operations\GetPassageHtmlRequest(
+    query: '<value>',
 );
 
-if ($response->bytes !== null) {
+$response = $sdk->passages->getHtml(
+    request: $request
+);
+
+if ($response->passageResponse !== null) {
     // handle response
 }
 ```
