@@ -3,24 +3,24 @@ id: fc12597f-7743-4f39-8acb-38773b3de991
 management:
   docChecksum: 68a5dff174a4d4f21b279d09f8b73a3e
   docVersion: 1.0.0
-  speakeasyVersion: 1.484.1
-  generationVersion: 2.503.2
-  releaseVersion: 0.0.6
-  configChecksum: a14202a87f1dc795584e5367110a229e
+  speakeasyVersion: 1.551.0
+  generationVersion: 2.610.0
+  releaseVersion: 0.1.0
+  configChecksum: 310675d6350d756b66995cdcb9dc3db4
   repoURL: https://github.com/walker-tx/esv-sdk-php.git
   installationURL: https://github.com/walker-tx/esv-sdk-php
   published: true
 features:
   php:
     constsAndDefaults: 0.2.0
-    core: 3.7.13
+    core: 3.8.5
     flattening: 2.81.1
-    globalSecurity: 2.81.7
+    globalSecurity: 2.81.8
     globalSecurityFlattening: 0.1.2
-    globalServerURLs: 2.82.1
+    globalServerURLs: 2.82.2
     methodArguments: 0.1.0
     nameOverrides: 2.81.2
-    pagination: 0.1.2
+    pagination: 0.1.4
     responseFormat: 0.1.0
 generatedFiles:
   - .gitattributes
@@ -146,9 +146,10 @@ examples:
           wrapping-div: true
           div-classes: "esv"
       responses:
+        "200":
+          application/json: {}
         "400":
           application/json: {"code": "<value>", "message": "<value>"}
-        "200": {}
     CompactNotation:
       parameters:
         query:
@@ -170,9 +171,10 @@ examples:
           wrapping-div: true
           div-classes: "esv"
       responses:
+        "200":
+          application/json: {}
         "400":
           application/json: {"code": "<value>", "message": "<value>"}
-        "200": {}
     ChapterRange:
       parameters:
         query:
@@ -194,9 +196,10 @@ examples:
           wrapping-div: true
           div-classes: "esv"
       responses:
+        "200":
+          application/json: {}
         "400":
           application/json: {"code": "<value>", "message": "<value>"}
-        "200": {}
     NumericalEncoding:
       parameters:
         query:
@@ -218,9 +221,10 @@ examples:
           wrapping-div: true
           div-classes: "esv"
       responses:
+        "200":
+          application/json: {}
         "400":
           application/json: {"code": "<value>", "message": "<value>"}
-        "200": {}
     DigitalRange:
       parameters:
         query:
@@ -242,9 +246,10 @@ examples:
           wrapping-div: true
           div-classes: "esv"
       responses:
+        "200":
+          application/json: {}
         "400":
           application/json: {"code": "<value>", "message": "<value>"}
-        "200": {}
     MultiReference:
       parameters:
         query:
@@ -266,9 +271,10 @@ examples:
           wrapping-div: true
           div-classes: "esv"
       responses:
+        "200":
+          application/json: {}
         "400":
           application/json: {"code": "<value>", "message": "<value>"}
-        "200": {}
     StructuredDigital:
       parameters:
         query:
@@ -290,9 +296,10 @@ examples:
           wrapping-div: true
           div-classes: "esv"
       responses:
+        "200":
+          application/json: {}
         "400":
           application/json: {"code": "<value>", "message": "<value>"}
-        "200": {}
     "":
       parameters:
         query:
@@ -314,9 +321,10 @@ examples:
           wrapping-div: true
           div-classes: "esv"
       responses:
+        "200":
+          application/json: {}
         "400":
           application/json: {"code": "<value>", "message": "<value>"}
-        "200": {}
   searchPassages:
     speakeasy-default-search-passages:
       parameters:
@@ -336,7 +344,7 @@ examples:
           q: "John 1:1"
       responses:
         "200":
-          audio/mpeg: "0xED6DDa99Bf"
+          audio/mpeg: "0xFbA0e37D97"
         "400":
           application/json: {"code": "<value>", "message": "<value>"}
     CompactNotation:
@@ -345,7 +353,7 @@ examples:
           q: "jn11.35"
       responses:
         "200":
-          audio/mpeg: "0x9afC922Bf4"
+          audio/mpeg: "0x3978c386C0"
         "400":
           application/json: {"code": "<value>", "message": "<value>"}
     ChapterRange:
@@ -354,7 +362,7 @@ examples:
           q: "Genesis 1-3"
       responses:
         "200":
-          audio/mpeg: "0xB39fB04224"
+          audio/mpeg: "0x26A9df0F3b"
         "400":
           application/json: {"code": "<value>", "message": "<value>"}
     NumericalEncoding:
@@ -363,7 +371,7 @@ examples:
           q: "43011035"
       responses:
         "200":
-          audio/mpeg: "0x0CCE103a4c"
+          audio/mpeg: "0x32eB986f8A"
         "400":
           application/json: {"code": "<value>", "message": "<value>"}
     DigitalRange:
@@ -372,7 +380,7 @@ examples:
           q: "01001001-01011032"
       responses:
         "200":
-          audio/mpeg: "0xdAdB3abDda"
+          audio/mpeg: "0xcCDA8a93FF"
         "400":
           application/json: {"code": "<value>", "message": "<value>"}
     MultiReference:
@@ -381,7 +389,7 @@ examples:
           q: "John1.1;Genesis1.1"
       responses:
         "200":
-          audio/mpeg: "0xcae05f1674"
+          audio/mpeg: "0x3eD7Ff7Db0"
         "400":
           application/json: {"code": "<value>", "message": "<value>"}
     StructuredDigital:
@@ -390,7 +398,7 @@ examples:
           q: "19001001-19001006,19003001-19003008"
       responses:
         "200":
-          audio/mpeg: "0x89a8c2146c"
+          audio/mpeg: "0xdd7F900e8a"
         "400":
           application/json: {"code": "<value>", "message": "<value>"}
   getPassageText:
@@ -418,9 +426,10 @@ examples:
           indent-psalm-doxology: 30
           line-length: 0
       responses:
+        "200":
+          application/json: {}
         "400":
           application/json: {"code": "<value>", "message": "<value>"}
-        "200": {}
     CompactNotation:
       parameters:
         query:
@@ -445,9 +454,10 @@ examples:
           indent-psalm-doxology: 30
           line-length: 0
       responses:
+        "200":
+          application/json: {}
         "400":
           application/json: {"code": "<value>", "message": "<value>"}
-        "200": {}
     ChapterRange:
       parameters:
         query:
@@ -472,9 +482,10 @@ examples:
           indent-psalm-doxology: 30
           line-length: 0
       responses:
+        "200":
+          application/json: {}
         "400":
           application/json: {"code": "<value>", "message": "<value>"}
-        "200": {}
     NumericalEncoding:
       parameters:
         query:
@@ -499,9 +510,10 @@ examples:
           indent-psalm-doxology: 30
           line-length: 0
       responses:
+        "200":
+          application/json: {}
         "400":
           application/json: {"code": "<value>", "message": "<value>"}
-        "200": {}
     DigitalRange:
       parameters:
         query:
@@ -526,9 +538,10 @@ examples:
           indent-psalm-doxology: 30
           line-length: 0
       responses:
+        "200":
+          application/json: {}
         "400":
           application/json: {"code": "<value>", "message": "<value>"}
-        "200": {}
     MultiReference:
       parameters:
         query:
@@ -553,9 +566,10 @@ examples:
           indent-psalm-doxology: 30
           line-length: 0
       responses:
+        "200":
+          application/json: {}
         "400":
           application/json: {"code": "<value>", "message": "<value>"}
-        "200": {}
     StructuredDigital:
       parameters:
         query:
@@ -580,9 +594,10 @@ examples:
           indent-psalm-doxology: 30
           line-length: 0
       responses:
+        "200":
+          application/json: {}
         "400":
           application/json: {"code": "<value>", "message": "<value>"}
-        "200": {}
     "":
       parameters:
         query:
@@ -607,8 +622,9 @@ examples:
           indent-psalm-doxology: 30
           line-length: 0
       responses:
+        "200":
+          application/json: {}
         "400":
           application/json: {"code": "<value>", "message": "<value>"}
-        "200": {}
-examplesVersion: 1.0.0
+examplesVersion: 1.0.2
 generatedTests: {}
