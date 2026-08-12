@@ -35,3 +35,13 @@ Based on:
 - [php v0.1.0] .
 ### Releases
 - [Composer v0.1.0] https://packagist.org/packages/walker-tx/esv-sdk-php#v0.1.0 - .
+
+## 2026-08-12 21:51:18
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.793.1 (2.928.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [php v0.2.0] .
+### Releases
+- [Composer v0.2.0] https://packagist.org/packages/walker-tx/esv-sdk-php#v0.2.0 - .

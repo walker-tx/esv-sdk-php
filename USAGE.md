@@ -14,7 +14,7 @@ $sdk = Esv\Esv::builder()
     ->build();
 
 $request = new Operations\GetPassageHtmlRequest(
-    query: '<value>',
+    query: 'John 1:1',
 );
 
 $response = $sdk->passages->getHtml(

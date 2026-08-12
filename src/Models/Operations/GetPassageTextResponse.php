@@ -35,7 +35,7 @@ class GetPassageTextResponse
     /**
      * Successful response
      *
-     * @var ?Components\PassageResponse $passageResponse
+     * @var ?\WalkerTx\Esv\Models\Components\PassageResponse $passageResponse
      */
     public ?Components\PassageResponse $passageResponse = null;
 
@@ -43,7 +43,7 @@ class GetPassageTextResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?Components\PassageResponse  $passageResponse
+     * @param  ?\WalkerTx\Esv\Models\Components\PassageResponse  $passageResponse
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\PassageResponse $passageResponse = null)

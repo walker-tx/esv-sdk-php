@@ -118,7 +118,7 @@ class GetPassageTextRequest
     /**
      * Character to use for indentation
      *
-     * @var ?IndentUsing $indentUsing
+     * @var ?\WalkerTx\Esv\Models\Operations\IndentUsing $indentUsing
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=indent-using')]
     public ?IndentUsing $indentUsing = null;
@@ -185,7 +185,7 @@ class GetPassageTextRequest
      * @param  ?bool  $includeHeadingHorizontalLines
      * @param  ?int  $horizontalLineLength
      * @param  ?bool  $includeSelahs
-     * @param  ?IndentUsing  $indentUsing
+     * @param  ?\WalkerTx\Esv\Models\Operations\IndentUsing  $indentUsing
      * @param  ?int  $indentParagraphs
      * @param  ?int  $indentPoetry
      * @param  ?int  $indentPoetryLines

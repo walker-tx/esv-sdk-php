@@ -8,9 +8,7 @@ declare(strict_types=1);
 
 namespace WalkerTx\Esv\Utils\Retry;
 
-use Brick\DateTime\DateTimeException;
 use Brick\DateTime\LocalDateTime;
-use Brick\DateTime\Parser\DateTimeParseException;
 use Brick\DateTime\TimeZone;
 use Psr\Http\Message\ResponseInterface;
 
@@ -74,6 +72,10 @@ class RetryUtils
         if ($response == null) {
             return 0;
         }
+        $retryAfterMs = $response->getHeader('retry-after-ms');
+        if (count($retryAfterMs) > 0 && is_numeric($retryAfterMs[0])) {
+            return max(0, (int) $retryAfterMs[0]);
+        }
         $retryAfter = $response->getHeader('Retry-After');
         if (count($retryAfter) == 0) {
             return 0;
@@ -83,14 +85,17 @@ class RetryUtils
             return (int) $retryAfter * 1000;
         }
 
-        try {
-            $parsedDate = LocalDateTime::parse($retryAfter);
-            $deltaMS = ($parsedDate->getNano() * 1000) - (LocalDateTime::now(TimeZone::utc())->getNano() * 1000);
-
-            return $deltaMS > 0 ? (int) ceil($deltaMS) : 0;
-        } catch (DateTimeParseException|DateTimeException $e) {
-            return 0;
+        $parsedDate = \DateTimeImmutable::createFromFormat(\DateTimeInterface::RFC7231, $retryAfter, new \DateTimeZone('UTC'));
+        if ($parsedDate === false) {
+            try {
+                $parsedDate = new \DateTimeImmutable($retryAfter);
+            } catch (\Exception $e) {
+                return 0;
+            }
         }
+        $deltaMS = ($parsedDate->getTimestamp() - time()) * 1000;
+
+        return max(0, $deltaMS);
     }
 
     /**
@@ -104,9 +109,13 @@ class RetryUtils
 
         $final = false;
         foreach ($statusCodes as $code) {
-            $matches = [];
-            if (! preg_match('/^[0-9]xx$/', $code, $matches)) {
-                return $code === $actual;
+            if (! preg_match('/^[0-9]xx$/', $code)) {
+                $final = $code === $actual;
+                if ($final) {
+                    break;
+                }
+
+                continue;
             }
 
             $expectFamily = mb_substr($code, 0, 1);
@@ -121,6 +130,7 @@ class RetryUtils
 
             if ($actualFamily === $expectFamily) {
                 $final = true;
+                break;
             }
         }
 

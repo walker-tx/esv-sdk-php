@@ -35,7 +35,7 @@ class SearchPassagesResponse
     /**
      * Successful response
      *
-     * @var ?SearchPassagesResponseBody $object
+     * @var ?\WalkerTx\Esv\Models\Operations\SearchPassagesResponseBody $object
      */
     public ?SearchPassagesResponseBody $object = null;
 
@@ -47,7 +47,7 @@ class SearchPassagesResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?SearchPassagesResponseBody  $object
+     * @param  ?\WalkerTx\Esv\Models\Operations\SearchPassagesResponseBody  $object
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?SearchPassagesResponseBody $object = null)

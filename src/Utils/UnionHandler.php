@@ -10,9 +10,6 @@ namespace WalkerTx\Esv\Utils;
 
 use Speakeasy\Serializer\Context;
 use Speakeasy\Serializer\DeserializationContext;
-use Speakeasy\Serializer\Exception\NonFloatCastableTypeException;
-use Speakeasy\Serializer\Exception\NonIntCastableTypeException;
-use Speakeasy\Serializer\Exception\NonStringCastableTypeException;
 use Speakeasy\Serializer\Exception\NonVisitableTypeException;
 use Speakeasy\Serializer\Exception\PropertyMissingException;
 use Speakeasy\Serializer\Exception\RuntimeException;
@@ -78,6 +75,10 @@ final class UnionHandler implements SubscribingHandlerInterface
                 } else {
                     return $this->matchAssociativeArrayType($data, $type, $context);
                 }
+            } elseif (is_array($data)) {
+                $resolvedType = ['name' => 'array', 'params' => []];
+            } elseif ($this->paramsLookLikeUnionDiscriminator($type)) {
+                $resolvedType = ['name' => get_class($data), 'params' => []];
             } else {
                 $resolvedType = null;
                 foreach ($type['params'] as $possibleType) {
@@ -112,13 +113,14 @@ final class UnionHandler implements SubscribingHandlerInterface
 
         // if three params exist, it may mean that there was a union discriminator set for this type.
         // It also may mean that there are three possible types.
-        if (count($type['params']) == 3 && $this->paramsLookLikeUnionDiscriminator($type)) {
+        if ($this->paramsLookLikeUnionDiscriminator($type)) {
             $lookupField = $type['params'][1];
             if (empty($data[$lookupField])) {
                 throw new NonVisitableTypeException(sprintf('Union Discriminator Field "%s" not found in data', $lookupField));
             }
 
             $unionMap = $type['params'][2];
+
             $lookupValue = $data[$lookupField];
             if (empty($unionMap[$lookupValue])) {
                 throw new NonVisitableTypeException(sprintf('Union Discriminator Map does not contain key "%s"', $lookupValue));
@@ -132,6 +134,7 @@ final class UnionHandler implements SubscribingHandlerInterface
             return $context->getNavigator()->accept($data, $finalType);
         }
 
+        $exceptions = '';
         foreach ($this->reorderTypes($type)['params'] as $possibleType) {
 
             $typeToTry = $possibleType['name'];
@@ -161,26 +164,18 @@ final class UnionHandler implements SubscribingHandlerInterface
                 $accept = $serializer->deserialize($json_encoded_data, $typeToTry, 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
 
                 return $accept;
-            } catch (NonVisitableTypeException $e) {
+            } catch (\Error $e) {
+                $exceptions .= $e.'\n';
+
                 continue;
-            } catch (PropertyMissingException $e) {
-                continue;
-            } catch (NonStringCastableTypeException $e) {
-                continue;
-            } catch (NonIntCastableTypeException $e) {
-                continue;
-            } catch (NonFloatCastableTypeException $e) {
-                continue;
-            } catch (\Brick\Math\Exception\NumberFormatException $e) {
-                continue;
-            } catch (\Brick\Math\Exception\RoundingNecessaryException $e) {
-                continue;
-            } catch (RuntimeException $e) {
+            } catch (\Exception $e) {
+                $exceptions .= $e.'\n';
+
                 continue;
             }
         }
-
-        return null;
+        $unionName = implode('|', $type['params']);
+        throw new RuntimeException("Could not deserialize into union $unionName. \n".$exceptions);
     }
 
     /**
@@ -189,11 +184,11 @@ final class UnionHandler implements SubscribingHandlerInterface
      */
     private function paramsLookLikeUnionDiscriminator(array $type): bool
     {
-        // if the first param is null, then the second and third parameters
-        // will contain the discriminator details.
-        $first = $type['params'][0];
-
-        return $first === null;
+        // Discriminated unions are encoded as a fixed [null, field, map] triple:
+        //   params[0] = null sentinel
+        //   params[1] = discriminator field name
+        //   params[2] = mapping of discriminator value -> FQCN
+        return count($type['params']) === 3 && $type['params'][0] === null;
     }
 
     /**
@@ -397,6 +392,8 @@ final class UnionHandler implements SubscribingHandlerInterface
             if ($param['name'] === 'union') {
                 $innerTypes = array_map(fn ($t) => $t['name'], $param['params']);
                 $typeNames[] = $typeToTry = implode('|', $innerTypes);
+            } elseif ($param['name'] === 'enum') {
+                $typeNames[] = $param['params'][0]['name'];
             } else {
                 $typeNames[] = $param['name'];
             }

@@ -13,6 +13,8 @@ class SDKConfiguration
 {
     public ?\GuzzleHttp\ClientInterface $client = null;
 
+    public ?\GuzzleHttp\ClientInterface $defaultClient = null;
+
     public Hooks\SDKHooks $hooks;
     /** @var ?pure-Closure(): Models\Components\Security */
     public ?\Closure $securitySource = null;
@@ -24,11 +26,11 @@ class SDKConfiguration
 
     public string $openapiDocVersion = '1.0.0';
 
-    public string $sdkVersion = '0.1.0';
+    public string $sdkVersion = '0.2.0';
 
-    public string $genVersion = '2.610.0';
+    public string $genVersion = '2.928.0';
 
-    public string $userAgent = 'speakeasy-sdk/php 0.1.0 2.610.0 1.0.0 walker-tx/esv-sdk-php';
+    public string $userAgent = 'speakeasy-sdk/php 0.2.0 2.928.0 1.0.0 walker-tx/esv-sdk-php';
 
     public ?RetryConfig $retryConfig = null;
 
@@ -83,16 +85,5 @@ class SDKConfiguration
         }
 
         return Utils\Utils::templateUrl($this->getServerUrl(), []);
-    }
-
-    public function initHooks(\GuzzleHttp\ClientInterface $client): \GuzzleHttp\ClientInterface
-    {
-        $preHooksUrl = $this->getTemplatedServerUrl();
-        $ret = $this->hooks->sdkInit($preHooksUrl, $client);
-        if ($preHooksUrl != $ret->url) {
-            $this->serverUrl = $ret->url;
-        }
-
-        return $ret->client;
     }
 }

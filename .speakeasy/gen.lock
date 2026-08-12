@@ -3,126 +3,426 @@ id: fc12597f-7743-4f39-8acb-38773b3de991
 management:
   docChecksum: 68a5dff174a4d4f21b279d09f8b73a3e
   docVersion: 1.0.0
-  speakeasyVersion: 1.551.0
-  generationVersion: 2.610.0
-  releaseVersion: 0.1.0
-  configChecksum: 310675d6350d756b66995cdcb9dc3db4
+  speakeasyVersion: 1.793.1
+  generationVersion: 2.928.0
+  releaseVersion: 0.2.0
+  configChecksum: be3d9d29dc516c279b4261adae7719d1
   repoURL: https://github.com/walker-tx/esv-sdk-php.git
-  installationURL: https://github.com/walker-tx/esv-sdk-php
+  installationURL: https://github.com/walker-tx/esv-sdk-php.git
   published: true
+persistentEdits:
+  generation_id: 9f7dd8d8-5544-4f28-aad9-172907ef26d5
+  pristine_commit_hash: ae620810457b4cb2d2da11e9cf2368e9de917f3d
+  pristine_tree_hash: df802311e41cc2c705b38c0d1e720c47fc31f0a2
 features:
   php:
-    constsAndDefaults: 0.2.0
-    core: 3.8.5
-    flattening: 2.81.1
-    globalSecurity: 2.81.8
+    constsAndDefaults: 0.2.2
+    core: 3.9.25
+    flattening: 2.81.2
+    globalSecurity: 2.81.12
     globalSecurityFlattening: 0.1.2
-    globalServerURLs: 2.82.2
+    globalServerURLs: 2.83.1
     methodArguments: 0.1.0
-    nameOverrides: 2.81.2
-    pagination: 0.1.4
+    nameOverrides: 2.81.4
+    pagination: 0.1.5
     responseFormat: 0.1.0
-generatedFiles:
-  - .gitattributes
-  - USAGE.md
-  - composer.json
-  - config/services.php
-  - docs/Models/Components/PassageMeta.md
-  - docs/Models/Components/PassageResponse.md
-  - docs/Models/Components/Security.md
-  - docs/Models/Errors/Error.md
-  - docs/Models/Operations/GetPassageAudioRequest.md
-  - docs/Models/Operations/GetPassageAudioResponse.md
-  - docs/Models/Operations/GetPassageHtmlRequest.md
-  - docs/Models/Operations/GetPassageHtmlResponse.md
-  - docs/Models/Operations/GetPassageTextRequest.md
-  - docs/Models/Operations/GetPassageTextResponse.md
-  - docs/Models/Operations/IndentUsing.md
-  - docs/Models/Operations/Results.md
-  - docs/Models/Operations/SearchPassagesRequest.md
-  - docs/Models/Operations/SearchPassagesResponse.md
-  - docs/Models/Operations/SearchPassagesResponseBody.md
-  - docs/Models/Operations/Verses.md
-  - docs/sdks/esv/README.md
-  - docs/sdks/passages/README.md
-  - phpstan.neon
-  - phpunit.xml
-  - pint.json
-  - rector.php
-  - src/Esv.php
-  - src/EsvBuilder.php
-  - src/Hooks/AfterErrorContext.php
-  - src/Hooks/AfterErrorHook.php
-  - src/Hooks/AfterSuccessContext.php
-  - src/Hooks/AfterSuccessHook.php
-  - src/Hooks/BeforeRequestContext.php
-  - src/Hooks/BeforeRequestHook.php
-  - src/Hooks/Credentials.php
-  - src/Hooks/ErrorResponseContext.php
-  - src/Hooks/FailEarlyException.php
-  - src/Hooks/HookContext.php
-  - src/Hooks/Hooks.php
-  - src/Hooks/SDKHooks.php
-  - src/Hooks/SDKInitHook.php
-  - src/Hooks/SDKRequestContext.php
-  - src/Hooks/Session.php
-  - src/Hooks/TokenResponse.php
-  - src/Models/Components/PassageMeta.php
-  - src/Models/Components/PassageResponse.php
-  - src/Models/Components/Security.php
-  - src/Models/Errors/APIException.php
-  - src/Models/Errors/Error.php
-  - src/Models/Errors/ErrorThrowable.php
-  - src/Models/Operations/GetPassageAudioRequest.php
-  - src/Models/Operations/GetPassageAudioResponse.php
-  - src/Models/Operations/GetPassageHtmlRequest.php
-  - src/Models/Operations/GetPassageHtmlResponse.php
-  - src/Models/Operations/GetPassageTextRequest.php
-  - src/Models/Operations/GetPassageTextResponse.php
-  - src/Models/Operations/IndentUsing.php
-  - src/Models/Operations/Results.php
-  - src/Models/Operations/SearchPassagesRequest.php
-  - src/Models/Operations/SearchPassagesResponse.php
-  - src/Models/Operations/SearchPassagesResponseBody.php
-  - src/Models/Operations/Verses.php
-  - src/PackageServiceProvider.php
-  - src/Passages.php
-  - src/SDKConfiguration.php
-  - src/Utils/BigDecimalHandler.php
-  - src/Utils/BigIntHandler.php
-  - src/Utils/DateHandler.php
-  - src/Utils/DateTimeHandler.php
-  - src/Utils/DefaultRequest.php
-  - src/Utils/DefaultResponse.php
-  - src/Utils/DefaultStream.php
-  - src/Utils/DefaultUri.php
-  - src/Utils/EnumHandler.php
-  - src/Utils/FormMetadata.php
-  - src/Utils/Headers.php
-  - src/Utils/JSON.php
-  - src/Utils/MixedJSONHandler.php
-  - src/Utils/MultipartMetadata.php
-  - src/Utils/Options.php
-  - src/Utils/ParamsMetadata.php
-  - src/Utils/PathParameters.php
-  - src/Utils/PhpDocTypeParser.php
-  - src/Utils/QueryParameters.php
-  - src/Utils/RequestBodies.php
-  - src/Utils/RequestMetadata.php
-  - src/Utils/Retry/PermanentError.php
-  - src/Utils/Retry/RetryConfig.php
-  - src/Utils/Retry/RetryConfigBackoff.php
-  - src/Utils/Retry/RetryConfigNone.php
-  - src/Utils/Retry/RetryStrategy.php
-  - src/Utils/Retry/RetryUtils.php
-  - src/Utils/Retry/TemporaryError.php
-  - src/Utils/Security.php
-  - src/Utils/SecurityClient.php
-  - src/Utils/SecurityMetadata.php
-  - src/Utils/ServerDetails.php
-  - src/Utils/SpeakeasyMetadata.php
-  - src/Utils/UnionHandler.php
-  - src/Utils/Utils.php
+trackedFiles:
+  .gitattributes:
+    id: 24139dae6567
+    last_write_checksum: sha1:d1d000f6673e5838a636562dceffa2d9dec820df
+    pristine_git_object: e672f6ec6e8fb43d8886a12d531eb19ee8aaf881
+  USAGE.md:
+    id: 3aed33ce6e6f
+    last_write_checksum: sha1:2ec5c5f6e5605f5721da5efc1583746fe48446bf
+    pristine_git_object: 32886d6320e02db2c9ac5b4c3d1d4b6fd5bd335c
+  composer.json:
+    id: 3957b91a0d84
+    last_write_checksum: sha1:6667d7be2d2351ebd4a2bb8829526fff895a7798
+    pristine_git_object: 75b33d2f28b2cd89762006c4d283641a2f5c7f62
+  config/services.php:
+    id: 67cde7ebf0c8
+    last_write_checksum: sha1:6cd936be45a27f3826b57e5d4af93f0249a444a8
+    pristine_git_object: 42840537341c64065819a8ac715c9c0f048be30c
+  docs/Models/Components/PassageMeta.md:
+    id: 0a5169ac0009
+    last_write_checksum: sha1:84d9d7f8ccdfa6c4104df138e47cfbef844b4dbd
+    pristine_git_object: 98572ff8a862f2af36df795d0755553300e2cc7c
+  docs/Models/Components/PassageResponse.md:
+    id: 4e44f95c9fa5
+    last_write_checksum: sha1:1956349171b18dd060440f8899890b09495271ab
+    pristine_git_object: 140325ab49cc175b327209299049f985c3bca324
+  docs/Models/Components/Security.md:
+    id: 7bcd54fda13a
+    last_write_checksum: sha1:326fc0eb501e9afac57b84fee6653d8272ba8a80
+    pristine_git_object: e4a21bee797a3adaad43e6bc8fc759efadf8cf25
+  docs/Models/Errors/Error.md:
+    id: 5c07b0d61f4b
+    last_write_checksum: sha1:7f7f2ffb8e244c9b69ce7a20b075eb75db072239
+    pristine_git_object: 1b52ebe333033d2d091f7f7bc8f86a96b94f8ddb
+  docs/Models/Operations/GetPassageAudioRequest.md:
+    id: b0df74b94995
+    last_write_checksum: sha1:d42a5994c4b79b85366e60da676ae0a4449b1e7d
+    pristine_git_object: d4de1f06103d9385e4962ecf59468d62c57be13a
+  docs/Models/Operations/GetPassageAudioResponse.md:
+    id: 9e4efcb616bf
+    last_write_checksum: sha1:94fe0dd3438bbe27ed4958816a5c128ab8f3b0b5
+    pristine_git_object: d8149b969a0f5dc84c4342c4193adf0410ab4cc1
+  docs/Models/Operations/GetPassageHtmlRequest.md:
+    id: 80b50069fa9e
+    last_write_checksum: sha1:05da97052f42a383ad07f68d0ad77ceee63cb887
+    pristine_git_object: e4c6782f2854922baa353c8cbbe9398532f2d0fd
+  docs/Models/Operations/GetPassageHtmlResponse.md:
+    id: ba48da6bf3de
+    last_write_checksum: sha1:bdb59e87981b6d011a54fe3cf8a95e58b196520b
+    pristine_git_object: 614c608ac309ec1e15599e4fa352fa1321735f37
+  docs/Models/Operations/GetPassageTextRequest.md:
+    id: 18393b5ad5d1
+    last_write_checksum: sha1:de9c84c3791e0c4b901ef37b292443111146fcf6
+    pristine_git_object: 029e0155b14f038244497f83f348633b4b1d191e
+  docs/Models/Operations/GetPassageTextResponse.md:
+    id: 9bafe3a01243
+    last_write_checksum: sha1:3ebca5d3ae6f5003dae947b9c78955d04e44b086
+    pristine_git_object: 52ada4bc0e5c32e97dc0b3d87bd692b461449069
+  docs/Models/Operations/IndentUsing.md:
+    id: a0df481d7020
+    last_write_checksum: sha1:7073938f517d397cdfe26e0017804555410e035c
+    pristine_git_object: cc9ecf6352752c11aa820232e8c99f5900bfc99a
+  docs/Models/Operations/Results.md:
+    id: a41a2e2e4617
+    last_write_checksum: sha1:ea1acc171074b87966b1a14379347cb8a8a1c990
+    pristine_git_object: 5a7fd857d73a456f34d55397528e6292b0033d96
+  docs/Models/Operations/SearchPassagesRequest.md:
+    id: f690cf8c720d
+    last_write_checksum: sha1:068684a8f2511c8a912d14ba562ab57378f8bae6
+    pristine_git_object: 449687aa737fabf824ba571df723761c472c7b71
+  docs/Models/Operations/SearchPassagesResponse.md:
+    id: 1b193e380254
+    last_write_checksum: sha1:7f78f32e1c5715f44684d9338aeb378d5a6e8aca
+    pristine_git_object: b7463a96555c89a1f9c1b7aaa694c4d0f6b129c1
+  docs/Models/Operations/SearchPassagesResponseBody.md:
+    id: 033a0cabf416
+    last_write_checksum: sha1:ed60a3991b2be45b163417af06b15ee952ea0957
+    pristine_git_object: 3ea10ddb79685f19617bd0d7a000791166a59b5d
+  docs/Models/Operations/Verses.md:
+    id: 782984e1ac1e
+    last_write_checksum: sha1:7f965bed74f4eca6fd1d3637e9ba811bd4dc939b
+    pristine_git_object: 461b8f58f07640307f1d5d94ed5b846efebe480e
+  docs/sdks/passages/README.md:
+    id: 2f799cc05d18
+    last_write_checksum: sha1:b5e5c9ba9fa89f392c6043c33a4c1eb27627d191
+    pristine_git_object: 0e1e0f15d9d76eb9f1a24cee54cef679e77d50f3
+  phpstan.neon:
+    id: 9503203c22f7
+    last_write_checksum: sha1:c76cf3ac20b114f85cd6c3b569a6e297d00b4612
+    pristine_git_object: 6188b5177bddbec398e85d5b98090eec69be6774
+  phpunit.xml:
+    id: 357499abc6fd
+    last_write_checksum: sha1:1a2f73f76c0929634baf4e48f5718b9a2449be79
+    pristine_git_object: d3f71bfa07200801d6b6a0b7a94576259d12ab31
+  pint.json:
+    id: 62bb227d0546
+    last_write_checksum: sha1:2359db512d27012e65e376b39996d3b78f87a95a
+    pristine_git_object: 53fd5e26c8f850442e8c7da7e8614cefb865b2c0
+  rector.php:
+    id: 6615ad7e99dd
+    last_write_checksum: sha1:2c0586f29783d1cdf80ea09f3ed0f4693329f3e6
+    pristine_git_object: 40eb9bfbea10383ae16ce195da9113bb2abfc586
+  src/Esv.php:
+    id: a4511ccabc7a
+    last_write_checksum: sha1:a4256257c87e4c59f26c89c80259414ca9d92798
+    pristine_git_object: 2ba1d476f5610808cc3917fb56fbc06558336a4a
+  src/EsvBuilder.php:
+    id: dc375ba052d6
+    last_write_checksum: sha1:8eb37b3eda0a31ce9fc007e552d4bcf57d0cd49b
+    pristine_git_object: 11d35390cd1e2295c8f8f7104d159da91145e5a2
+  src/Hooks/AfterErrorContext.php:
+    id: d3767eb93096
+    last_write_checksum: sha1:d89f99e9d7595b2ec32bfb113e0944f6e0d60319
+    pristine_git_object: af6a9c4e105ea9c35485904b3bfda1636657cf27
+  src/Hooks/AfterErrorHook.php:
+    id: b6f229875029
+    last_write_checksum: sha1:4d5612c5e3961a7b8617c36328fab24569295bbe
+    pristine_git_object: f89dd584a7f596280311456effeb1a3bb6a056d2
+  src/Hooks/AfterSuccessContext.php:
+    id: 1297ed8410e9
+    last_write_checksum: sha1:0118cbb14a15b011e644a5cd72d00ac0ed4b22da
+    pristine_git_object: d17dc022f9958863da83cb1df966f77adee92d79
+  src/Hooks/AfterSuccessHook.php:
+    id: 3f9dd7b31c3a
+    last_write_checksum: sha1:46a4f3ec62102f7fb1cd40ba1e90b4b5dd4afdf7
+    pristine_git_object: a02d9b700985488c6308eeb12a54f39540529957
+  src/Hooks/BeforeRequestContext.php:
+    id: 62d4f2980d2d
+    last_write_checksum: sha1:28a2154a5e6cdc61d4c651a7756be792afbaebb1
+    pristine_git_object: 8aa734803d54d05d6a4a207120671d9711105225
+  src/Hooks/BeforeRequestHook.php:
+    id: 55e17f24cc34
+    last_write_checksum: sha1:1f5fe9c246c461601768a43ff53c49de7d1008f8
+    pristine_git_object: 9fb9c44e89287225c58bb146c4ef9cf29382a87d
+  src/Hooks/Credentials.php:
+    id: b37a16c555af
+    last_write_checksum: sha1:96e4b4e2a0945bf11c8dbc1e218b185cdde408af
+    pristine_git_object: 613accaf953533a40c48e2fe11b87da6b2a66926
+  src/Hooks/ErrorResponseContext.php:
+    id: 2ba4c41dd54c
+    last_write_checksum: sha1:067eced8842c8911926808b6cf11eb94d90b0fb6
+    pristine_git_object: 7e34592366f54c195f024fefaa0352c81e063897
+  src/Hooks/FailEarlyException.php:
+    id: 0ae1bdaec63f
+    last_write_checksum: sha1:8ae97b7ffc85adac2e82ff9039b3455f1d35f36b
+    pristine_git_object: 3a5381a68a208663c04bf68495344cbd3d426ccf
+  src/Hooks/HookContext.php:
+    id: 279c02d439a6
+    last_write_checksum: sha1:a3e647d9c455a43a67056bae7f0bea9e224bb3aa
+    pristine_git_object: 29341ce1b47d8703376b609dccf24c51fdbb433f
+  src/Hooks/Hooks.php:
+    id: 6cf174b736b4
+    last_write_checksum: sha1:2afcaa43f6db450af8e3dc54a179a5f93f216db8
+    pristine_git_object: 16ed776e1dfaf59b091cc8071357e32645ff77e9
+  src/Hooks/SDKHooks.php:
+    id: d31b27b84f0b
+    last_write_checksum: sha1:b2edf94f1f1fa3decdb44c1f5c23664f02212031
+    pristine_git_object: cd12ba6c6b008414b0208befabf91dc38f65e11f
+  src/Hooks/SDKInitHook.php:
+    id: 16729a806274
+    last_write_checksum: sha1:7c299a6d09c48108ce4c638df43deda5c7bf6dde
+    pristine_git_object: 682ac2a2319b911e794dc60a8f8932965699f7b8
+  src/Hooks/SDKRequestContext.php:
+    id: c229582a4ae0
+    last_write_checksum: sha1:ccac906c7a43612d651ec7ecaddd6c184e89b892
+    pristine_git_object: 14e631a3623b728684de738e53804fd3595a04f9
+  src/Hooks/Session.php:
+    id: dc21f349b594
+    last_write_checksum: sha1:f4e1284c34e59903e5e3ea9225410f0bb8152831
+    pristine_git_object: 709efcb10d6c0136a59b0d291d121863ee7688d5
+  src/Hooks/TokenResponse.php:
+    id: aad5e2b1d06f
+    last_write_checksum: sha1:ede69700eb0ee24a69759c5ee955a5c5f97173f2
+    pristine_git_object: 547f17bac7886cedd64b4e494c38f629697af694
+  src/Models/Components/PassageMeta.php:
+    id: 2eafe44b4871
+    last_write_checksum: sha1:41e2e1a8d6208596e8993c18047960ce584a4b70
+    pristine_git_object: 49f441a0f8fc00a12cd941b6738d848aef872039
+  src/Models/Components/PassageResponse.php:
+    id: a4dc236609c6
+    last_write_checksum: sha1:d7a4738721ee1f19b4fe9a21411866f445a62765
+    pristine_git_object: 8acbcd9b228bdc2666986a3ccc3ecd296eb52f05
+  src/Models/Components/Security.php:
+    id: 7c1ef2c6cbb3
+    last_write_checksum: sha1:9b4d2086f314b361a5c3b1dee5ce1216c27261d8
+    pristine_git_object: 00f4fd808d607641284504a52c886214716b9163
+  src/Models/Errors/APIException.php:
+    id: 9ce9f9c7a8d6
+    last_write_checksum: sha1:832d6c8407e0c14b9ea01947f4d880d14266ce8d
+    pristine_git_object: 0e553df24e58d646264d180c54190f7d6b918a8c
+  src/Models/Errors/Error.php:
+    id: f961d0165078
+    last_write_checksum: sha1:e4c3f532edc9f8b7cac636f3fbad0b36cc9c8a98
+    pristine_git_object: 69f6b24958a11bf7d93a5b7d6d466a2f6e389fc5
+  src/Models/Errors/ErrorThrowable.php:
+    id: 9a0c2fbbe8b1
+    last_write_checksum: sha1:0c330e251ac2cef73d571d1dbe4f533854e1803a
+    pristine_git_object: 699231406335c4257db1954a79528e613e707b0e
+  src/Models/Operations/GetPassageAudioRequest.php:
+    id: 49f5f33a4578
+    last_write_checksum: sha1:0738d224acbf6efa5e49a53305d69e9a1ee909a3
+    pristine_git_object: d9fe5a991f7a0818c6beb66d587bc19eec7cc01c
+  src/Models/Operations/GetPassageAudioResponse.php:
+    id: 31ced52ab7bf
+    last_write_checksum: sha1:6a878af8d760f0a1cd259cf745bec69b2e4a1347
+    pristine_git_object: 6f98e1f6e591d1d9b9c03d5dbbe1e334637c4b77
+  src/Models/Operations/GetPassageHtmlRequest.php:
+    id: 97fcade82d65
+    last_write_checksum: sha1:f8b41712c0cd1a4c7ab06b967699cf1b29ec153f
+    pristine_git_object: dc9479799b3eb808d7a9e5ccebd2e33008ba8e84
+  src/Models/Operations/GetPassageHtmlResponse.php:
+    id: 773496f739d3
+    last_write_checksum: sha1:6ec716771489aa050de20d5e31dec61eb45497c7
+    pristine_git_object: 5c8d2d89d4b5b5a363cc36804f44d5332e88c170
+  src/Models/Operations/GetPassageTextRequest.php:
+    id: 5162b6360ba2
+    last_write_checksum: sha1:cc7c8c8560e465615619cf73bd7fdf6513e2315f
+    pristine_git_object: 9946cb9b9e1a6f9678417808765aa20400fd8003
+  src/Models/Operations/GetPassageTextResponse.php:
+    id: 35b13d21c52c
+    last_write_checksum: sha1:659e0d73f199a09d745ae845fabf25dc3664bb57
+    pristine_git_object: b55e8c731bd60068905b8474ae428b2d15fc0a50
+  src/Models/Operations/IndentUsing.php:
+    id: 7dc8f206ab31
+    last_write_checksum: sha1:59b8761d8aa5b7be737975c584424e315730671a
+    pristine_git_object: ba54e2a5f357c01d8f9a0ce3e2140344f10be57d
+  src/Models/Operations/Results.php:
+    id: 125a268dbe44
+    last_write_checksum: sha1:ea555b1debb0e019bed7e059d836f0866744f27b
+    pristine_git_object: 208a32dd8124cda50301dfbd38215b8982861cfc
+  src/Models/Operations/SearchPassagesRequest.php:
+    id: a14be4d2dfc3
+    last_write_checksum: sha1:488a30679c24a26be43a6c2836c0c3410af25c2a
+    pristine_git_object: 7a024524c2476d92a1ea8e3053043a043a92b00a
+  src/Models/Operations/SearchPassagesResponse.php:
+    id: 143e0aa9e63a
+    last_write_checksum: sha1:1d84791a55cd3c05c7e0f642b35268895f2587c0
+    pristine_git_object: 8109a3aa5b32e5885018c8849b33d32dcbe2e0c9
+  src/Models/Operations/SearchPassagesResponseBody.php:
+    id: 971b688ecbe4
+    last_write_checksum: sha1:03f157e8fd66fa4b1ed56dd641b74241c6f066d2
+    pristine_git_object: 16df115c4814d850aecd6800eaae1f0049ac1add
+  src/Models/Operations/Verses.php:
+    id: 2bbc1f9c4b17
+    last_write_checksum: sha1:2d71df773dfc31d86c0b1d4c2ed58bac6407c7fc
+    pristine_git_object: 34cd62f8b7f8ed076bd4685c49be9c8b34df67ea
+  src/PackageServiceProvider.php:
+    id: 43cd8a58b8aa
+    last_write_checksum: sha1:f3314ba2d2d4e4f6b019b71ebee1e7dc76c3e22c
+    pristine_git_object: 4f734c357ff27d3f783cccb60f63abd97348b10e
+  src/Passages.php:
+    id: 8f0261b8d9f8
+    last_write_checksum: sha1:22733ed1b182811c92b61e064b61eab18c125d71
+    pristine_git_object: 93e6be659eafe3786aea4b184674b811997b6ba4
+  src/SDKConfiguration.php:
+    id: 9d60ab0bec0b
+    last_write_checksum: sha1:e97bb3f7e515befb0b5746f535921b9abb910e45
+    pristine_git_object: 9e1f4524b8e9cb5cfcad205567e859369e6901c4
+  src/Utils/BigDecimalHandler.php:
+    id: cdcca3718e2e
+    last_write_checksum: sha1:0e653467011686eb37ac1e124de328129f9d6952
+    pristine_git_object: a46d84c7d2456ad318665091227977e88cbbfda2
+  src/Utils/BigIntHandler.php:
+    id: 190c4d16fa85
+    last_write_checksum: sha1:77b4993c363fc51a4a11d1a9015b13c0a9a68b4f
+    pristine_git_object: a6dac78a363e5f17d00772d22d56750bb65999c4
+  src/Utils/DateHandler.php:
+    id: 3223e13fd506
+    last_write_checksum: sha1:513a4ac9c13f104a44153c3e51fed904a120ba96
+    pristine_git_object: 9386c657d14d27466d7996ea5eeb896cf2c08808
+  src/Utils/DateTimeHandler.php:
+    id: 7ca531e0aebd
+    last_write_checksum: sha1:7e472f3157599b3b1fdeeb0cabe42b9bf15b0af0
+    pristine_git_object: 584b67ef821caa1e4c8d6e4096399537d74c661d
+  src/Utils/DefaultRequest.php:
+    id: 6fe9607b243e
+    last_write_checksum: sha1:bb09d296cc38ca8c053919d20b2c549faf6e2fbd
+    pristine_git_object: eda58e840f13ab5f89bea7bc78e4e9b65a728769
+  src/Utils/DefaultResponse.php:
+    id: 0f196b8017df
+    last_write_checksum: sha1:84c5ed7904a1ab1f3a7dc92de31b7b5e67a268f2
+    pristine_git_object: 46392a5aed4fb7c1df5bc594d1e6922047197332
+  src/Utils/DefaultStream.php:
+    id: 14d2eedf020b
+    last_write_checksum: sha1:bb6b78e0d245dfbad52abb553b705572a4983a4e
+    pristine_git_object: cb7db8dc5cbe7158f18ae980a256b4e2c0f68890
+  src/Utils/DefaultUri.php:
+    id: 41b965402390
+    last_write_checksum: sha1:bb0c3ec45c4f961f524a37d068e3f5a6d91ec7bc
+    pristine_git_object: 2bf55637cc8564e2f041cb2ce6fcc04c1324fe27
+  src/Utils/EnumHandler.php:
+    id: 02e7893b40fb
+    last_write_checksum: sha1:d68edc7c792614c8f83902ee9566666240d66c5b
+    pristine_git_object: b0268410b90fe420f2a22e3b1823bf0e41caeec9
+  src/Utils/FormMetadata.php:
+    id: a439bdb795e2
+    last_write_checksum: sha1:87365cf3c93480d34cd8dfe0c83bb1c8404fc87d
+    pristine_git_object: ad1bad2926a375374081ab0cc72c08df9f9a2f88
+  src/Utils/Headers.php:
+    id: 98710f1dd715
+    last_write_checksum: sha1:3b72d1d71ba222f0b23ad707f1ced6c924044fed
+    pristine_git_object: 046ce80847f64d92f99807c9bb3bb9fa876394e8
+  src/Utils/JSON.php:
+    id: fb267328a809
+    last_write_checksum: sha1:4556bcce0de28e16e0a46fc58980799715e9b967
+    pristine_git_object: aacd547b351106fb55ce1fcdeb1f9bdd3d87743f
+  src/Utils/MixedJSONHandler.php:
+    id: ceb58b45ce9f
+    last_write_checksum: sha1:fd1b5e8f82064ac0803ed61dbf3c42ec1da845ff
+    pristine_git_object: f1cee7691a35ebd1c0b5c9c522175eb5c6c3a78d
+  src/Utils/MultipartMetadata.php:
+    id: 4b6a976cbd33
+    last_write_checksum: sha1:bd8eb23a78afd279a2c1443cd17a222f2e54c089
+    pristine_git_object: b14f054cf213bcf95bec64a70cc4867364d4a61a
+  src/Utils/Options.php:
+    id: c675c18e8d43
+    last_write_checksum: sha1:c0f24750ea6bd90dfa1d50b5ca242b87797e0bf9
+    pristine_git_object: e6bbf86f57f81df0bca7971f7af46421a3944834
+  src/Utils/ParamsMetadata.php:
+    id: 53200159d3ba
+    last_write_checksum: sha1:0353cc44902954addde91e025ab8aeaa9bb9ee32
+    pristine_git_object: 9bdf41b758fd5637339efdd4fbed506d60a6d85a
+  src/Utils/PathParameters.php:
+    id: bed72f45a7d0
+    last_write_checksum: sha1:ab1dcb8ab579e0bc0419139e371d082de7331a56
+    pristine_git_object: 8dfe6264fa5b3421d559d29f1b5df8aedfc14f5a
+  src/Utils/PhpDocTypeParser.php:
+    id: 2b60c7b364fb
+    last_write_checksum: sha1:28a62b24f36e2940554319be7bd82c4ef4dd78fb
+    pristine_git_object: e3a0b5324dd08583e494ee074595655e978678a0
+  src/Utils/QueryParameters.php:
+    id: 4cfeb0a96efd
+    last_write_checksum: sha1:3576d04756e021a8a11f5fca32cb0acc53fa300a
+    pristine_git_object: 2065b072e39579c4ebac4aaa5861409fc913728e
+  src/Utils/RequestBodies.php:
+    id: 30dc93a697d3
+    last_write_checksum: sha1:143cbfacba041ac04af10505c0f8f250b170c919
+    pristine_git_object: fe9ed50b66e19700b9f9e450957e2ac2690b5cf2
+  src/Utils/RequestMetadata.php:
+    id: 63c8deb4cf4a
+    last_write_checksum: sha1:34afa81198b254dab716cafb0e75c4a53a61c6e1
+    pristine_git_object: 32cdf7d906069f36dc217f67a578f6d1777abae7
+  src/Utils/Retry/PermanentError.php:
+    id: ced3cce6125c
+    last_write_checksum: sha1:3e1eb843fbe1641be08aa1806fcee52615368b9d
+    pristine_git_object: df42208ef0fe8e3b5568f15088c841b6a5d4888b
+  src/Utils/Retry/RetryConfig.php:
+    id: 86ede313b205
+    last_write_checksum: sha1:8b69658d4cf56800a859de861f0ae7edcd8a7f45
+    pristine_git_object: d0bd429407f2dc5e21712373b3692bad87847e85
+  src/Utils/Retry/RetryConfigBackoff.php:
+    id: 9492a6123b6f
+    last_write_checksum: sha1:3e4a9330e46bfb5a82630da20f7d71ce085bbc4d
+    pristine_git_object: 38214d87d8bb2ea4b1bd6739fdcb1625e4f19860
+  src/Utils/Retry/RetryConfigNone.php:
+    id: 97a086b67b34
+    last_write_checksum: sha1:f7d855ec63878f072271f423004aa8db0e05ffd2
+    pristine_git_object: 08bb609597ade5dc169f847240eff9dbe9ba291b
+  src/Utils/Retry/RetryStrategy.php:
+    id: 50fcd2c78a30
+    last_write_checksum: sha1:b448a482b6369a3b2fa0c5303c16463b57b84be4
+    pristine_git_object: 27fb0af087e0634c459c39889a3a5847bbbeeab6
+  src/Utils/Retry/RetryUtils.php:
+    id: 28597380e832
+    last_write_checksum: sha1:06a0952688af59bd51dc81d447181fd06a60a6ed
+    pristine_git_object: f57633dcd217ac33b54e4ed19252660a28326dd0
+  src/Utils/Retry/TemporaryError.php:
+    id: d58c3851b91f
+    last_write_checksum: sha1:9975cdfe0b61f26973e0d61612bc129be07b7cdb
+    pristine_git_object: 28122979e254d1651a9c128a96f2bc0f03bc54a3
+  src/Utils/Security.php:
+    id: 564a31099977
+    last_write_checksum: sha1:5c59770a0caf21fd1a71b5074d14c46d94f348bf
+    pristine_git_object: 71ee6fdcb377af90e8377beb3d15e754a27db5c9
+  src/Utils/SecurityClient.php:
+    id: de11afa826f4
+    last_write_checksum: sha1:fe832045f6e96f3652e17c8e39c4420fcb43af6e
+    pristine_git_object: 97f04995178ef6399da420f8dbc6ba027bb3dac9
+  src/Utils/SecurityMetadata.php:
+    id: 55ec148715b3
+    last_write_checksum: sha1:efe655321e53a2484a1369f87fe106b775325448
+    pristine_git_object: 73b7243f8a34c51ba9f4986cd99261b24aaefe2f
+  src/Utils/ServerDetails.php:
+    id: 71ed88cf4f04
+    last_write_checksum: sha1:dc2148ef6c174f7ef7b3f20be5f33b0783bf26ac
+    pristine_git_object: 355f0af7e0f332b31985bd229ad109249f4d4162
+  src/Utils/SpeakeasyMetadata.php:
+    id: a33363de3a1a
+    last_write_checksum: sha1:c056f5a61b6d25020780c128ca669d57a19c4cc7
+    pristine_git_object: 3d365bd75762e8ecf429860500bade95bb728091
+  src/Utils/UnionHandler.php:
+    id: 5a76a946fe85
+    last_write_checksum: sha1:59f4e729413867b9bcb1fe2605f774e3d32e6454
+    pristine_git_object: 2e436d2c3739a596e9753b7915e1dc8d190f2e33
+  src/Utils/Utils.php:
+    id: c902f57e2422
+    last_write_checksum: sha1:488ea464556dece948b3b2718868131b368d6bcd
+    pristine_git_object: f6cc5574df00ae7249cd1739d0ef696af0d96e8f
 examples:
   getPassageHtml:
     StandardReference:
@@ -325,6 +625,31 @@ examples:
           application/json: {}
         "400":
           application/json: {"code": "<value>", "message": "<value>"}
+    speakeasy-default-get-passage-html:
+      parameters:
+        query:
+          q: "<value>"
+          include-passage-references: true
+          include-verse-numbers: true
+          include-first-verse-numbers: true
+          include-footnotes: true
+          include-footnote-body: true
+          include-headings: true
+          include-short-copyright: false
+          include-copyright: false
+          include-passage-horizontal-lines: false
+          include-heading-horizontal-lines: false
+          horizontal-line-length: 55
+          include-selahs: true
+          include-css-link: true
+          inline-styles: false
+          wrapping-div: true
+          div-classes: "esv"
+      responses:
+        "200":
+          application/json: {}
+        "400":
+          application/json: {"code": "<value>", "message": "<value>"}
   searchPassages:
     speakeasy-default-search-passages:
       parameters:
@@ -399,6 +724,15 @@ examples:
       responses:
         "200":
           audio/mpeg: "0xdd7F900e8a"
+        "400":
+          application/json: {"code": "<value>", "message": "<value>"}
+    speakeasy-default-get-passage-audio:
+      parameters:
+        query:
+          q: "<value>"
+      responses:
+        "200":
+          audio/mpeg: "0xFbA0e37D97"
         "400":
           application/json: {"code": "<value>", "message": "<value>"}
   getPassageText:
@@ -626,5 +960,134 @@ examples:
           application/json: {}
         "400":
           application/json: {"code": "<value>", "message": "<value>"}
+    speakeasy-default-get-passage-text:
+      parameters:
+        query:
+          q: "<value>"
+          include-passage-references: true
+          include-verse-numbers: true
+          include-first-verse-numbers: true
+          include-footnotes: true
+          include-footnote-body: true
+          include-headings: true
+          include-short-copyright: false
+          include-copyright: false
+          include-passage-horizontal-lines: false
+          include-heading-horizontal-lines: false
+          horizontal-line-length: 55
+          include-selahs: true
+          indent-using: "space"
+          indent-paragraphs: 2
+          indent-poetry: 2
+          indent-poetry-lines: 4
+          indent-declares: 40
+          indent-psalm-doxology: 30
+          line-length: 0
+      responses:
+        "200":
+          application/json: {}
+        "400":
+          application/json: {"code": "<value>", "message": "<value>"}
 examplesVersion: 1.0.2
 generatedTests: {}
+generatedFiles:
+  - .gitattributes
+  - USAGE.md
+  - composer.json
+  - config/services.php
+  - docs/Models/Components/PassageMeta.md
+  - docs/Models/Components/PassageResponse.md
+  - docs/Models/Components/Security.md
+  - docs/Models/Errors/Error.md
+  - docs/Models/Operations/GetPassageAudioRequest.md
+  - docs/Models/Operations/GetPassageAudioResponse.md
+  - docs/Models/Operations/GetPassageHtmlRequest.md
+  - docs/Models/Operations/GetPassageHtmlResponse.md
+  - docs/Models/Operations/GetPassageTextRequest.md
+  - docs/Models/Operations/GetPassageTextResponse.md
+  - docs/Models/Operations/IndentUsing.md
+  - docs/Models/Operations/Results.md
+  - docs/Models/Operations/SearchPassagesRequest.md
+  - docs/Models/Operations/SearchPassagesResponse.md
+  - docs/Models/Operations/SearchPassagesResponseBody.md
+  - docs/Models/Operations/Verses.md
+  - docs/sdks/esv/README.md
+  - docs/sdks/passages/README.md
+  - phpstan.neon
+  - phpunit.xml
+  - pint.json
+  - rector.php
+  - src/Esv.php
+  - src/EsvBuilder.php
+  - src/Hooks/AfterErrorContext.php
+  - src/Hooks/AfterErrorHook.php
+  - src/Hooks/AfterSuccessContext.php
+  - src/Hooks/AfterSuccessHook.php
+  - src/Hooks/BeforeRequestContext.php
+  - src/Hooks/BeforeRequestHook.php
+  - src/Hooks/Credentials.php
+  - src/Hooks/ErrorResponseContext.php
+  - src/Hooks/FailEarlyException.php
+  - src/Hooks/HookContext.php
+  - src/Hooks/Hooks.php
+  - src/Hooks/SDKHooks.php
+  - src/Hooks/SDKInitHook.php
+  - src/Hooks/SDKRequestContext.php
+  - src/Hooks/Session.php
+  - src/Hooks/TokenResponse.php
+  - src/Models/Components/PassageMeta.php
+  - src/Models/Components/PassageResponse.php
+  - src/Models/Components/Security.php
+  - src/Models/Errors/APIException.php
+  - src/Models/Errors/Error.php
+  - src/Models/Errors/ErrorThrowable.php
+  - src/Models/Operations/GetPassageAudioRequest.php
+  - src/Models/Operations/GetPassageAudioResponse.php
+  - src/Models/Operations/GetPassageHtmlRequest.php
+  - src/Models/Operations/GetPassageHtmlResponse.php
+  - src/Models/Operations/GetPassageTextRequest.php
+  - src/Models/Operations/GetPassageTextResponse.php
+  - src/Models/Operations/IndentUsing.php
+  - src/Models/Operations/Results.php
+  - src/Models/Operations/SearchPassagesRequest.php
+  - src/Models/Operations/SearchPassagesResponse.php
+  - src/Models/Operations/SearchPassagesResponseBody.php
+  - src/Models/Operations/Verses.php
+  - src/PackageServiceProvider.php
+  - src/Passages.php
+  - src/SDKConfiguration.php
+  - src/Utils/BigDecimalHandler.php
+  - src/Utils/BigIntHandler.php
+  - src/Utils/DateHandler.php
+  - src/Utils/DateTimeHandler.php
+  - src/Utils/DefaultRequest.php
+  - src/Utils/DefaultResponse.php
+  - src/Utils/DefaultStream.php
+  - src/Utils/DefaultUri.php
+  - src/Utils/EnumHandler.php
+  - src/Utils/FormMetadata.php
+  - src/Utils/Headers.php
+  - src/Utils/JSON.php
+  - src/Utils/MixedJSONHandler.php
+  - src/Utils/MultipartMetadata.php
+  - src/Utils/Options.php
+  - src/Utils/ParamsMetadata.php
+  - src/Utils/PathParameters.php
+  - src/Utils/PhpDocTypeParser.php
+  - src/Utils/QueryParameters.php
+  - src/Utils/RequestBodies.php
+  - src/Utils/RequestMetadata.php
+  - src/Utils/Retry/PermanentError.php
+  - src/Utils/Retry/RetryConfig.php
+  - src/Utils/Retry/RetryConfigBackoff.php
+  - src/Utils/Retry/RetryConfigNone.php
+  - src/Utils/Retry/RetryStrategy.php
+  - src/Utils/Retry/RetryUtils.php
+  - src/Utils/Retry/TemporaryError.php
+  - src/Utils/Security.php
+  - src/Utils/SecurityClient.php
+  - src/Utils/SecurityMetadata.php
+  - src/Utils/ServerDetails.php
+  - src/Utils/SpeakeasyMetadata.php
+  - src/Utils/UnionHandler.php
+  - src/Utils/Utils.php
