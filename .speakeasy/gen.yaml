@@ -4,6 +4,7 @@ generation:
   maintainOpenAPIOrder: true
   usageSnippets:
     optionalPropertyRendering: withExample
+    sdkInitStyle: constructor
   useClassNamesForArrayFields: true
   fixes:
     nameResolutionDec2023: true
@@ -12,16 +13,29 @@ generation:
     requestResponseComponentNamesFeb2024: true
     securityFeb2025: false
     sharedErrorComponentsApr2025: false
+    sharedNestedComponentsJan2026: false
+    nameOverrideFeb2026: false
   auth:
     oAuth2ClientCredentialsEnabled: true
     oAuth2PasswordEnabled: true
+    hoistGlobalSecurity: true
+  schemas:
+    allOfMergeStrategy: shallowMerge
+  requestBodyFieldName: ""
+  versioningStrategy: automatic
+  persistentEdits: {}
+  tests:
+    generateTests: true
+    generateNewTests: false
+    skipResponseBodyAssertions: false
 php:
-  version: 0.1.0
+  version: 0.2.0
   additionalDependencies:
     autoload: {}
     autoload-dev: {}
     require: {}
     require-dev: {}
+  baseErrorName: EsvException
   clientServerStatusCodesAsErrors: true
   defaultErrorName: APIException
   flattenGlobalSecurity: true
@@ -33,12 +47,14 @@ php:
       operations: Models/Operations
       shared: Models/Components
       webhooks: Models/Webhooks
+  inferUnionDiscriminators: false
   inputModelSuffix: input
   laravelServiceProvider:
     enabled: true
     svcName: esv
   maxMethodParams: 4
   methodArguments: infer-optional-args
+  multipartArrayFormat: legacy
   namespace: WalkerTx\Esv
   outputModelSuffix: output
   packageName: walker-tx/esv-sdk-php

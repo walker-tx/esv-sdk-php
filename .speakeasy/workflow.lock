@@ -1,20 +1,19 @@
-speakeasyVersion: 1.551.0
+speakeasyVersion: 1.793.1
 sources:
     Esv-OAS:
         sourceNamespace: esv-org-api
-        sourceRevisionDigest: sha256:a5b1d984364712190c312966dead83c8b3a4ffdfca840c76ac0eea7017d83e89
-        sourceBlobDigest: sha256:aa45a5cd72f8b25ef3d411e18de9bdf59ec407dc833b577731a8a09e6722977c
+        sourceRevisionDigest: sha256:a9b4671498f7d6ee1235ec96141feea04c2ceae57776b4d9db18a53fae2fa7b4
+        sourceBlobDigest: sha256:317edf49c614f66a5c2512cdb81bf892475de71a8676771b3b4f04b67cbd0261
         tags:
             - latest
-            - speakeasy-sdk-regen-1748179701
 targets:
     esv:
         source: Esv-OAS
         sourceNamespace: esv-org-api
-        sourceRevisionDigest: sha256:a5b1d984364712190c312966dead83c8b3a4ffdfca840c76ac0eea7017d83e89
-        sourceBlobDigest: sha256:aa45a5cd72f8b25ef3d411e18de9bdf59ec407dc833b577731a8a09e6722977c
+        sourceRevisionDigest: sha256:a9b4671498f7d6ee1235ec96141feea04c2ceae57776b4d9db18a53fae2fa7b4
+        sourceBlobDigest: sha256:317edf49c614f66a5c2512cdb81bf892475de71a8676771b3b4f04b67cbd0261
         codeSamplesNamespace: esv-oas-php-code-samples
-        codeSamplesRevisionDigest: sha256:5d02a7900fe31aa3fe9b380f50bde91a384cac16c0cfd08ca7b8ef7ef91e5588
+        codeSamplesRevisionDigest: sha256:b18271789d8707d4eabd8fc12901e3e39ea36426fce078c0cc58ead889ab792c
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest

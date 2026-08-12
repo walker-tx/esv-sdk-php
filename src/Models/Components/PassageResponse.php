@@ -42,7 +42,7 @@ class PassageResponse
     /**
      * $passageMeta
      *
-     * @var ?array<PassageMeta> $passageMeta
+     * @var ?array<\WalkerTx\Esv\Models\Components\PassageMeta> $passageMeta
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('passage_meta')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\WalkerTx\Esv\Models\Components\PassageMeta>|null')]
@@ -63,7 +63,7 @@ class PassageResponse
      * @param  ?string  $query
      * @param  ?string  $canonical
      * @param  ?array<array<int>>  $parsed
-     * @param  ?array<PassageMeta>  $passageMeta
+     * @param  ?array<\WalkerTx\Esv\Models\Components\PassageMeta>  $passageMeta
      * @param  ?array<string>  $passages
      * @phpstan-pure
      */

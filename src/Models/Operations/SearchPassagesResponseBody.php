@@ -42,7 +42,7 @@ class SearchPassagesResponseBody
     /**
      * $results
      *
-     * @var ?array<Results> $results
+     * @var ?array<\WalkerTx\Esv\Models\Operations\Results> $results
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('results')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\WalkerTx\Esv\Models\Operations\Results>|null')]
@@ -53,7 +53,7 @@ class SearchPassagesResponseBody
      * @param  ?int  $page
      * @param  ?int  $totalPages
      * @param  ?int  $totalResults
-     * @param  ?array<Results>  $results
+     * @param  ?array<\WalkerTx\Esv\Models\Operations\Results>  $results
      * @phpstan-pure
      */
     public function __construct(?int $page = null, ?int $totalPages = null, ?int $totalResults = null, ?array $results = null)

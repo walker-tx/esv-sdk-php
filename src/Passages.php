@@ -51,7 +51,7 @@ class Passages
      * https://api.esv.org/docs/passage-audio/ - Esv.org API Docs for `/v3/passage/audio`
      *
      * @param  string  $query
-     * @return Operations\GetPassageAudioResponse
+     * @return \WalkerTx\Esv\Models\Operations\GetPassageAudioResponse
      * @throws \WalkerTx\Esv\Models\Errors\APIException
      * @see https://api.esv.org/docs/passage-audio/
      */
@@ -60,7 +60,7 @@ class Passages
         $request = new Operations\GetPassageAudioRequest(
             query: $query,
         );
-        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/passage/audio/');
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
@@ -69,7 +69,7 @@ class Passages
         $httpOptions['headers']['Accept'] = 'audio/mpeg';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
-        $hookContext = new HookContext($baseUrl, 'getPassageAudio', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'getPassageAudio', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -82,11 +82,12 @@ class Passages
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $statusCode = $httpResponse->getStatusCode();
-        if (Utils\Utils::matchStatusCodes($statusCode, ['400', '401', '4XX', '5XX'])) {
+        if (Utils\Utils::matchStatusCodes($httpResponse->getStatusCode(), ['4XX', '5XX'])) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
             $httpResponse = $res;
         }
+
+        $statusCode = $httpResponse->getStatusCode();
         if (Utils\Utils::matchStatusCodes($statusCode, ['200'])) {
             if (Utils\Utils::matchContentType($contentType, 'audio/mpeg')) {
                 $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
@@ -127,14 +128,14 @@ class Passages
      * Returns Bible passage text with HTML formatting
      * https://api.esv.org/docs/passage-html/ - Esv.org API Docs for `/v3/passages/html`
      *
-     * @param  Operations\GetPassageHtmlRequest  $request
-     * @return Operations\GetPassageHtmlResponse
+     * @param  \WalkerTx\Esv\Models\Operations\GetPassageHtmlRequest  $request
+     * @return \WalkerTx\Esv\Models\Operations\GetPassageHtmlResponse
      * @throws \WalkerTx\Esv\Models\Errors\APIException
      * @see https://api.esv.org/docs/passage-html/
      */
     public function getHtml(Operations\GetPassageHtmlRequest $request, ?Options $options = null): Operations\GetPassageHtmlResponse
     {
-        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/passage/html/');
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
@@ -143,7 +144,7 @@ class Passages
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
-        $hookContext = new HookContext($baseUrl, 'getPassageHtml', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'getPassageHtml', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -156,11 +157,12 @@ class Passages
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $statusCode = $httpResponse->getStatusCode();
-        if (Utils\Utils::matchStatusCodes($statusCode, ['400', '401', '4XX', '5XX'])) {
+        if (Utils\Utils::matchStatusCodes($httpResponse->getStatusCode(), ['4XX', '5XX'])) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
             $httpResponse = $res;
         }
+
+        $statusCode = $httpResponse->getStatusCode();
         if (Utils\Utils::matchStatusCodes($statusCode, ['200'])) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
@@ -204,14 +206,14 @@ class Passages
      * Returns Bible passage text based on the provided query parameters
      * https://api.esv.org/docs/passage-text/ - Esv.org API Docs for `/v3/passages/text`
      *
-     * @param  Operations\GetPassageTextRequest  $request
-     * @return Operations\GetPassageTextResponse
+     * @param  \WalkerTx\Esv\Models\Operations\GetPassageTextRequest  $request
+     * @return \WalkerTx\Esv\Models\Operations\GetPassageTextResponse
      * @throws \WalkerTx\Esv\Models\Errors\APIException
      * @see https://api.esv.org/docs/passage-text/
      */
     public function getText(Operations\GetPassageTextRequest $request, ?Options $options = null): Operations\GetPassageTextResponse
     {
-        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/passage/text/');
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
@@ -220,7 +222,7 @@ class Passages
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
-        $hookContext = new HookContext($baseUrl, 'getPassageText', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'getPassageText', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -233,11 +235,12 @@ class Passages
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $statusCode = $httpResponse->getStatusCode();
-        if (Utils\Utils::matchStatusCodes($statusCode, ['400', '401', '4XX', '5XX'])) {
+        if (Utils\Utils::matchStatusCodes($httpResponse->getStatusCode(), ['4XX', '5XX'])) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
             $httpResponse = $res;
         }
+
+        $statusCode = $httpResponse->getStatusCode();
         if (Utils\Utils::matchStatusCodes($statusCode, ['200'])) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
@@ -284,7 +287,7 @@ class Passages
      * @param  string  $query
      * @param  ?int  $pageSize
      * @param  ?int  $page
-     * @return Operations\SearchPassagesResponse
+     * @return \WalkerTx\Esv\Models\Operations\SearchPassagesResponse
      * @throws \WalkerTx\Esv\Models\Errors\APIException
      * @see https://api.esv.org/docs/passage-search/
      */
@@ -295,7 +298,7 @@ class Passages
             pageSize: $pageSize,
             page: $page,
         );
-        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/passage/search/');
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
@@ -304,7 +307,7 @@ class Passages
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
-        $hookContext = new HookContext($baseUrl, 'searchPassages', [], $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'searchPassages', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -317,11 +320,12 @@ class Passages
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $statusCode = $httpResponse->getStatusCode();
-        if (Utils\Utils::matchStatusCodes($statusCode, ['400', '401', '4XX', '5XX'])) {
+        if (Utils\Utils::matchStatusCodes($httpResponse->getStatusCode(), ['4XX', '5XX'])) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
             $httpResponse = $res;
         }
+
+        $statusCode = $httpResponse->getStatusCode();
         if (Utils\Utils::matchStatusCodes($statusCode, ['200'])) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
@@ -336,7 +340,7 @@ class Passages
                     object: $obj);
                 $sdk = $this;
 
-                $response->next = function () use ($sdk, $request, $responseData, $query, $pageSize): ?Operations\SearchPassagesResponse {
+                $response->next = function () use ($sdk, $request, $responseData): ?Operations\SearchPassagesResponse {
                     $page = $request != null ? $request->page : 0;
                     $nextPage = $page + 1;
                     $jsonObject = new \JsonPath\JsonObject($responseData);
@@ -349,8 +353,8 @@ class Passages
                     }
 
                     return $sdk->searchIndividual(
-                        query: $query,
-                        pageSize: $pageSize,
+                        query: $request != null ? $request->query : '',
+                        pageSize: $request != null ? $request->pageSize : null,
                         page: $nextPage,
                     );
                 };
@@ -388,7 +392,7 @@ class Passages
      * @param  string  $query
      * @param  ?int  $pageSize
      * @param  ?int  $page
-     * @return \Generator<Operations\SearchPassagesResponse>
+     * @return \Generator<\WalkerTx\Esv\Models\Operations\SearchPassagesResponse>
      * @throws \WalkerTx\Esv\Models\Errors\APIException
      * @see https://api.esv.org/docs/passage-search/
      */

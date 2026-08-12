@@ -32,7 +32,7 @@ class Results
     /**
      * $verses
      *
-     * @var ?array<Verses> $verses
+     * @var ?array<\WalkerTx\Esv\Models\Operations\Verses> $verses
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('verses')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\WalkerTx\Esv\Models\Operations\Verses>|null')]
@@ -42,7 +42,7 @@ class Results
     /**
      * @param  ?string  $reference
      * @param  ?string  $content
-     * @param  ?array<Verses>  $verses
+     * @param  ?array<\WalkerTx\Esv\Models\Operations\Verses>  $verses
      * @phpstan-pure
      */
     public function __construct(?string $reference = null, ?string $content = null, ?array $verses = null)

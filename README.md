@@ -72,7 +72,7 @@ $sdk = Esv\Esv::builder()
     ->build();
 
 $request = new Operations\GetPassageHtmlRequest(
-    query: '<value>',
+    query: 'John 1:1',
 );
 
 $response = $sdk->passages->getHtml(
@@ -112,7 +112,7 @@ $sdk = Esv\Esv::builder()
     ->build();
 
 $request = new Operations\GetPassageHtmlRequest(
-    query: '<value>',
+    query: 'John 1:1',
 );
 
 $response = $sdk->passages->getHtml(
@@ -131,8 +131,7 @@ if ($response->passageResponse !== null) {
 <details open>
 <summary>Available methods</summary>
 
-
-### [passages](docs/sdks/passages/README.md)
+### [Passages](docs/sdks/passages/README.md)
 
 * [getHtml](docs/sdks/passages/README.md#gethtml) - Get Bible passage HTML
 * [search](docs/sdks/passages/README.md#search) - Search Bible passages
@@ -220,7 +219,7 @@ $sdk = Esv\Esv::builder()
 
 try {
     $request = new Operations\GetPassageHtmlRequest(
-        query: '<value>',
+        query: 'John 1:1',
     );
 
     $response = $sdk->passages->getHtml(
@@ -262,7 +261,7 @@ $sdk = Esv\Esv::builder()
     ->build();
 
 $request = new Operations\GetPassageHtmlRequest(
-    query: '<value>',
+    query: 'John 1:1',
 );
 
 $response = $sdk->passages->getHtml(
